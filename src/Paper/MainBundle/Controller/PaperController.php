@@ -19,7 +19,7 @@ class PaperController extends Controller{
         const ENTITY_NAME = 'Paper';
     /**
      * @Security("has_role('ROLE_ADMIN')")
-     * @Route("/", name="admin_paper_list")
+     * @Route("/", name="paper_list")
      * @Template()
      */
     public function listAction(){
@@ -37,7 +37,7 @@ class PaperController extends Controller{
 
     /**
      * @Security("has_role('ROLE_ADMIN')")
-     * @Route("/add", name="admin_paper_add")
+     * @Route("/add", name="paper_add")
      * @Template()
      */
     public function addAction(Request $request){
@@ -52,7 +52,7 @@ class PaperController extends Controller{
                 $em->persist($item);
                 $em->flush();
                 $em->refresh($item);
-                return $this->redirect($this->generateUrl('admin_paper_list'));
+                return $this->redirect($this->generateUrl('paper_list'));
             }
         }
         return array('form' => $form->createView());
@@ -60,7 +60,7 @@ class PaperController extends Controller{
 
     /**
      * @Security("has_role('ROLE_ADMIN')")
-     * @Route("/edit/{id}", name="admin_paper_edit")
+     * @Route("/edit/{id}", name="paper_edit")
      * @Template()
      */
     public function editAction(Request $request, $id){
@@ -74,7 +74,7 @@ class PaperController extends Controller{
                 $item = $formData->getData();
                 $em->flush($item);
                 $em->refresh($item);
-                return $this->redirect($this->generateUrl('admin_paper_list'));
+                return $this->redirect($this->generateUrl('paper_list'));
             }
         }
         return array('form' => $form->createView());
@@ -82,7 +82,7 @@ class PaperController extends Controller{
 
     /**
      * @Security("has_role('ROLE_ADMIN')")
-     * @Route("/remove/{id}", name="admin_paper_remove")
+     * @Route("/remove/{id}", name="paper_remove")
      */
     public function removeAction(Request $request, $id){
         $em = $this->getDoctrine()->getManager();

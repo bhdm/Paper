@@ -19,7 +19,7 @@ class UserController extends Controller{
         const ENTITY_NAME = 'User';
     /**
      * @Security("has_role('ROLE_ADMIN')")
-     * @Route("/", name="admin_user_list")
+     * @Route("/", name="user_list")
      * @Template()
      */
     public function listAction(){
@@ -37,7 +37,7 @@ class UserController extends Controller{
 
     /**
      * @Security("has_role('ROLE_ADMIN')")
-     * @Route("/add", name="admin_user_add")
+     * @Route("/add", name="user_add")
      * @Template()
      */
     public function addAction(Request $request){
@@ -52,7 +52,7 @@ class UserController extends Controller{
                 $em->persist($item);
                 $em->flush();
                 $em->refresh($item);
-                return $this->redirect($this->generateUrl('admin_user_list'));
+                return $this->redirect($this->generateUrl('user_list'));
             }
         }
         return array('form' => $form->createView());
@@ -60,7 +60,7 @@ class UserController extends Controller{
 
     /**
      * @Security("has_role('ROLE_ADMIN')")
-     * @Route("/edit/{id}", name="admin_user_edit")
+     * @Route("/edit/{id}", name="user_edit")
      * @Template()
      */
     public function editAction(Request $request, $id){
@@ -74,7 +74,7 @@ class UserController extends Controller{
                 $item = $formData->getData();
                 $em->flush($item);
                 $em->refresh($item);
-                return $this->redirect($this->generateUrl('admin_user_list'));
+                return $this->redirect($this->generateUrl('user_list'));
             }
         }
         return array('form' => $form->createView());
@@ -82,7 +82,7 @@ class UserController extends Controller{
 
     /**
      * @Security("has_role('ROLE_ADMIN')")
-     * @Route("/remove/{id}", name="admin_user_remove")
+     * @Route("/remove/{id}", name="user_remove")
      */
     public function removeAction(Request $request, $id){
         $em = $this->getDoctrine()->getManager();

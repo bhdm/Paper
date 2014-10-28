@@ -19,7 +19,7 @@ class OrderController extends Controller{
         const ENTITY_NAME = 'Order';
     /**
      * @Security("has_role('IS_AUTHENTICATED_REMEMBERED')")
-     * @Route("/", name="admin_order_list")
+     * @Route("/", name="order_list")
      * @Template()
      */
     public function listAction(){
@@ -37,7 +37,7 @@ class OrderController extends Controller{
 
     /**
      * @Security("has_role('IS_AUTHENTICATED_REMEMBERED')")
-     * @Route("/add", name="admin_order_add")
+     * @Route("/add", name="order_add")
      * @Template()
      */
     public function addAction(Request $request){
@@ -52,7 +52,7 @@ class OrderController extends Controller{
                 $em->persist($item);
                 $em->flush();
                 $em->refresh($item);
-                return $this->redirect($this->generateUrl('admin_order_list'));
+                return $this->redirect($this->generateUrl('order_list'));
             }
         }
         return array('form' => $form->createView());
@@ -60,7 +60,7 @@ class OrderController extends Controller{
 
     /**
      * @Security("has_role('IS_AUTHENTICATED_REMEMBERED')")
-     * @Route("/edit/{id}", name="admin_order_edit")
+     * @Route("/edit/{id}", name="order_edit")
      * @Template()
      */
     public function editAction(Request $request, $id){
@@ -74,7 +74,7 @@ class OrderController extends Controller{
                 $item = $formData->getData();
                 $em->flush($item);
                 $em->refresh($item);
-                return $this->redirect($this->generateUrl('admin_order_list'));
+                return $this->redirect($this->generateUrl('order_list'));
             }
         }
         return array('form' => $form->createView());
@@ -82,7 +82,7 @@ class OrderController extends Controller{
 
     /**
      * @Security("has_role('IS_AUTHENTICATED_REMEMBERED')")
-     * @Route("/remove/{id}", name="admin_order_remove")
+     * @Route("/remove/{id}", name="order_remove")
      */
     public function removeAction(Request $request, $id){
         $em = $this->getDoctrine()->getManager();
