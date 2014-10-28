@@ -70,7 +70,7 @@ class User extends BaseEntity implements UserInterface
      */
     public function getRoles()
     {
-        return explode(';', $this->roles);
+        return $this->roles;
     }
 
 
@@ -80,22 +80,23 @@ class User extends BaseEntity implements UserInterface
      */
     public function setRoles($roles)
     {
-        if (is_array($roles)) {
-            $roles = implode($roles, ';');
-        }
+//        if (is_array($roles)) {
+//            $roles = implode($roles, ';');
+//        }
 
         $this->roles = $roles;
     }
 
     public function removeRole($role)
     {
-        $roles = explode(';', $this->roles);
-        $key   = array_search($role, $roles);
-
-        if ($key !== false) {
-            unset($roles[$key]);
-            $this->roles = implode($roles, ';');
-        }
+//        $roles = explode(';', $this->roles);
+//        $key   = array_search($role, $roles);
+//
+//        if ($key !== false) {
+//            unset($roles[$key]);
+//            $this->roles = implode($roles, ';');
+//        }
+        $this->roles = null;
     }
 
     public function checkRole($role)

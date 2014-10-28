@@ -18,16 +18,17 @@ class UserType extends AbstractType
             ->add('username', null, array('label' => 'Логин'))
             ->add('password', 'repeated', array('type' => 'password', 'invalid_message' => 'пароли не совпадают', 'first_options'  => array('label' => 'Пароль'),
                 'second_options' => array('label' => 'Повторите пароль'),))
-//            ->add('roles','choice',  array(
-//                'empty_value' => false,
-//                'choices' => array(
-//                    'ROLE_ADMIN' => 'Администратор',
-//                    'ROLE_MANAGER' => 'Менеджер',
-//                    'ROLE_PRESSMAN' => 'Печатник',
-//                ),
-//                'label' => 'Активность',
-//                'required'  => false,
-//            ))
+
+            ->add('roles','choice',  array(
+                'empty_value' => false,
+                'choices' => array(
+                    'ROLE_ADMIN' => 'Администратор',
+                    'ROLE_MANAGER' => 'Менеджер',
+                    'ROLE_PRESSMAN' => 'Печатник',
+                ),
+                'label' => 'Активность',
+                'required'  => false,
+            ))
             ->add('enabled','choice',  array(
                 'empty_value' => false,
                 'choices' => array(
