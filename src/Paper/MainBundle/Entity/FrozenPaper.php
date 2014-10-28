@@ -11,11 +11,17 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table()
  * @ORM\Entity()
  */
-class frozenPaper extends BaseEntity
+class FrozenPaper extends BaseEntity
 {
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Order", inversedBy="papers")
+     */
     protected $order;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Paper", inversedBy="orders")
+     */
     protected $paper;
 
     /**

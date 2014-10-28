@@ -26,7 +26,7 @@ class Order extends BaseEntity
     protected $user;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Paper", mappedBy="orders")
+     * @ORM\OneToMany(targetEntity="FrozenPaper", mappedBy="order")
      */
     protected $papers;
 
@@ -39,6 +39,11 @@ class Order extends BaseEntity
      * @ORM\Column(type="integer")
      */
     protected $typePrint = 1;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $status = 0;
 
     public function __construct(){
         $this->papers = new ArrayCollection();
@@ -122,6 +127,22 @@ class Order extends BaseEntity
     public function getTypePrint()
     {
         return $this->typePrint;
+    }
+
+    /**
+     * @param mixed $status
+     */
+    public function setStatus($status = 0)
+    {
+        $this->status = $status;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatus()
+    {
+        return $this->status;
     }
 
 

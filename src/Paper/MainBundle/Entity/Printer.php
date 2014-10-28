@@ -6,12 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Paper
+ * Printer
  *
  * @ORM\Table()
  * @ORM\Entity()
  */
-class Paper extends BaseEntity
+class Printer extends BaseEntity
 {
     /**
      * @ORM\Column(type="string", length=255)
@@ -19,35 +19,16 @@ class Paper extends BaseEntity
      */
     protected $title;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    protected $count = 0;
-
 
     /**
-     * @ORM\OneToMany(targetEntity="FrozenPaper", mappedBy="paper")
+     * @ORM\OneToMany(targetEntity="FrozenPaper", mappedBy="printer")
      */
     protected $orders;
 
 
     public function __construct(){
         $this->orders = new ArrayCollection();
-    }
-    /**
-     * @param mixed $count
-     */
-    public function setCount($count)
-    {
-        $this->count = $count;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCount()
-    {
-        return $this->count;
+        $this->orders = new ArrayCollection();
     }
 
     /**
