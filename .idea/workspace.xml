@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca078380-153b-47cb-acb7-5448afb65390" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Controller/FrozenPaperController.php" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Controller/FrozenPaperController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Entity/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Controller/UserController.php" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Controller/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Form/UserType.php" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Form/UserType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/User/list.html.twig" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/User/list.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/menu.html.twig" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/menu.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/public/css/bootstrap-datetimepicker.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/public/js/bootstrap-datetimepicker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Statistic/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/public/js/moment.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/public/js/ru.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Form/FrozenPaperType.php" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Form/FrozenPaperType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Controller/StatisticController.php" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Controller/StatisticController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="paper.iws" />
@@ -35,91 +35,89 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="menu.html.twig" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/menu.html.twig">
+      <file leaf-file-name="StatisticController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/StatisticController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="47" selection-start="397" selection-end="397" vertical-scroll-proportion="-3.4736843" vertical-offset="0" max-vertical-offset="810">
+            <state line="50" column="14" selection-start="1805" selection-end="1805" vertical-scroll-proportion="-24.0" vertical-offset="162" max-vertical-offset="1170">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.html.twig" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="FrozenPaperType.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Form/FrozenPaperType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="22" selection-start="694" selection-end="694" vertical-scroll-proportion="-12.259259" vertical-offset="29" max-vertical-offset="1296">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.twig" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Statistic/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="22" selection-start="73" selection-end="73" vertical-scroll-proportion="0.041002277" vertical-offset="0" max-vertical-offset="2232">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.html.twig" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="30" selection-start="1637" selection-end="1637" vertical-scroll-proportion="0.6970387" vertical-offset="0" max-vertical-offset="1278">
+            <state line="10" column="12" selection-start="400" selection-end="485" vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="1278">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap-datetimepicker.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/public/js/bootstrap-datetimepicker.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="50" selection-start="1626" selection-end="1632" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="25020">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <marker date="1414519659263" expanded="false" signature="52545:52555" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="moment.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/public/js/moment.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2807" column="14" selection-start="91758" selection-end="91758" vertical-scroll-proportion="0.0" vertical-offset="49817" max-vertical-offset="50634">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ru.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/public/js/ru.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="149" column="41" selection-start="5285" selection-end="5285" vertical-scroll-proportion="0.0" vertical-offset="2279" max-vertical-offset="3096">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap-datetimepicker.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/public/css/bootstrap-datetimepicker.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="12" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="list.html.twig" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Paper/list.html.twig">
+        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Order/list.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="69" selection-start="3542" selection-end="3552" vertical-scroll-proportion="-19.333334" vertical-offset="756" max-vertical-offset="1944">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PaperController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/PaperController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="49" selection-start="3307" selection-end="3307" vertical-scroll-proportion="-20.11111" vertical-offset="1095" max-vertical-offset="1998">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FrozenPaperController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/FrozenPaperController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="37" selection-start="2357" selection-end="2357" vertical-scroll-proportion="4.6666665" vertical-offset="1134" max-vertical-offset="2034">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/UserController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="52" selection-start="342" selection-end="342" vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="1980">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserType.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Form/UserType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="24" selection-start="1140" selection-end="1140" vertical-scroll-proportion="-16.0" vertical-offset="90" max-vertical-offset="1188">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/AuthController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="228" selection-end="354" vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="1152">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.html.twig" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/User/list.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="40" selection-start="728" selection-end="728" vertical-scroll-proportion="-10.0" vertical-offset="144" max-vertical-offset="954">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Entity/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="233" column="20" selection-start="4399" selection-end="4399" vertical-scroll-proportion="-9.444445" vertical-offset="3885" max-vertical-offset="4788">
+            <state line="21" column="45" selection-start="693" selection-end="693" vertical-scroll-proportion="-14.0" vertical-offset="0" max-vertical-offset="1278">
               <folding />
             </state>
           </provider>
@@ -138,10 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/src/Paper/Bundle/MainBundle/Entity/BaseEntity.php" />
-        <option value="$PROJECT_DIR$/src/Paper/Bundle/MainBundle/Entity/User.php" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Form/PaperType.php" />
@@ -157,14 +151,12 @@
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Controller/PrinterController.php" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/User/edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Controller/StatisticController.php" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Entity/FrozenPaper.php" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Entity/OrderRepository.php" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Entity/Order.php" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Paper/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Printer/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Entity/Paper.php" />
-        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Form/FrozenPaperType.php" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/mini_layout.html.twig" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/add.html.twig" />
@@ -188,6 +180,13 @@
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Controller/FrozenPaperController.php" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/menu.html.twig" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Form/FrozenPaperType.php" />
+        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Controller/StatisticController.php" />
+        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/public/css/bootstrap-datetimepicker.css" />
+        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/public/js/bootstrap-datetimepicker.js" />
+        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/public/js/moment.js" />
+        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/public/js/ru.js" />
+        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Statistic/index.html.twig" />
       </list>
     </option>
   </component>
@@ -351,6 +350,172 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Statistic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MainBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Order" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MainBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MainBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MainBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MainBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -540,35 +705,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="67" selection-start="456" selection-end="456" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/pagination.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="2.0" vertical-offset="54" max-vertical-offset="1710" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="905" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Entity/BaseEntity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="0" selection-start="1692" selection-end="1692" vertical-scroll-proportion="0.17842324" vertical-offset="1714" max-vertical-offset="2286">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Paper/add.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="18" selection-start="18" selection-end="18" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Auth/login.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="41" selection-start="631" selection-end="631" vertical-scroll-proportion="0.70897156" vertical-offset="0" max-vertical-offset="720" />
@@ -693,13 +829,6 @@
         <state line="3" column="25" selection-start="92" selection-end="101" vertical-scroll-proportion="0.112033196" vertical-offset="0" max-vertical-offset="482" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Form/FrozenPaperType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="44" selection-start="1343" selection-end="1359" vertical-scroll-proportion="0.686722" vertical-offset="353" max-vertical-offset="1296">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Order/edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="18" selection-start="764" selection-end="764" vertical-scroll-proportion="0.2634855" vertical-offset="215" max-vertical-offset="936" />
@@ -738,13 +867,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Order/list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="32" selection-start="963" selection-end="1393" vertical-scroll-proportion="0.3001346" vertical-offset="245" max-vertical-offset="1278">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/cookie.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="484" />
@@ -771,65 +893,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/StatisticController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="39" selection-start="609" selection-end="623" vertical-scroll-proportion="-5.5185184" vertical-offset="103" max-vertical-offset="846">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Paper/list.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="69" selection-start="3542" selection-end="3552" vertical-scroll-proportion="-19.333334" vertical-offset="756" max-vertical-offset="1944">
+        <state line="71" column="69" selection-start="3542" selection-end="3552" vertical-scroll-proportion="0.7404255" vertical-offset="756" max-vertical-offset="1944">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/PaperController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="49" selection-start="3307" selection-end="3307" vertical-scroll-proportion="-20.11111" vertical-offset="1095" max-vertical-offset="1998">
+        <state line="98" column="49" selection-start="3307" selection-end="3307" vertical-scroll-proportion="0.730821" vertical-offset="1095" max-vertical-offset="1998">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/User/list.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="40" selection-start="728" selection-end="728" vertical-scroll-proportion="-10.0" vertical-offset="144" max-vertical-offset="954">
+        <state line="23" column="40" selection-start="728" selection-end="728" vertical-scroll-proportion="0.36339167" vertical-offset="144" max-vertical-offset="954">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="233" column="20" selection-start="4399" selection-end="4399" vertical-scroll-proportion="-9.444445" vertical-offset="3885" max-vertical-offset="4788">
+        <state line="233" column="20" selection-start="4399" selection-end="4399" vertical-scroll-proportion="0.34320322" vertical-offset="3885" max-vertical-offset="4788">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Form/UserType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="24" selection-start="1140" selection-end="1140" vertical-scroll-proportion="-16.0" vertical-offset="90" max-vertical-offset="1188">
+        <state line="31" column="24" selection-start="1140" selection-end="1140" vertical-scroll-proportion="0.5814266" vertical-offset="90" max-vertical-offset="1188">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="228" selection-end="354" vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="1152">
+        <state line="7" column="0" selection-start="228" selection-end="354" vertical-scroll-proportion="0.16958277" vertical-offset="0" max-vertical-offset="1152">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="52" selection-start="342" selection-end="342" vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="1980">
+        <state line="7" column="52" selection-start="342" selection-end="342" vertical-scroll-proportion="0.16958277" vertical-offset="0" max-vertical-offset="1980">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/FrozenPaperController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="37" selection-start="2357" selection-end="2357" vertical-scroll-proportion="4.6666665" vertical-offset="1134" max-vertical-offset="2034">
+        <state line="63" column="37" selection-start="2357" selection-end="2357" vertical-scroll-proportion="-0.16958277" vertical-offset="1134" max-vertical-offset="2034">
           <folding />
         </state>
       </provider>
@@ -841,9 +956,81 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Order/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="45" selection-start="693" selection-end="693" vertical-scroll-proportion="-14.0" vertical-offset="0" max-vertical-offset="1278">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Form/FrozenPaperType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="22" selection-start="694" selection-end="694" vertical-scroll-proportion="-12.259259" vertical-offset="29" max-vertical-offset="1296">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/public/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="154" column="17" selection-start="4217" selection-end="4217" vertical-scroll-proportion="0.35844156" vertical-offset="2496" max-vertical-offset="38160">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/public/css/bootstrap-datetimepicker.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="12" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/StatisticController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="14" selection-start="1805" selection-end="1805" vertical-scroll-proportion="-24.0" vertical-offset="162" max-vertical-offset="1170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="30" selection-start="1637" selection-end="1637" vertical-scroll-proportion="0.6970387" vertical-offset="0" max-vertical-offset="1278">
+        <state line="10" column="12" selection-start="400" selection-end="485" vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="1278">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/public/js/bootstrap-datetimepicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="50" selection-start="1626" selection-end="1632" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="25020">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1414519659263" expanded="false" signature="52545:52555" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/public/js/moment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2807" column="14" selection-start="91758" selection-end="91758" vertical-scroll-proportion="0.0" vertical-offset="49817" max-vertical-offset="50634">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/public/js/ru.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="149" column="41" selection-start="5285" selection-end="5285" vertical-scroll-proportion="0.0" vertical-offset="2279" max-vertical-offset="3096">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Statistic/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="22" selection-start="73" selection-end="73" vertical-scroll-proportion="0.041002277" vertical-offset="0" max-vertical-offset="2232">
           <folding />
         </state>
       </provider>
