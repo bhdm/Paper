@@ -83,4 +83,7 @@ class Paper extends BaseEntity
     }
 
 
+    public function __toString(){
+        return $this->title;
+    }
 }

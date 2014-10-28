@@ -15,8 +15,8 @@ class FrozenPaperType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('paper',array('label' => 'Бумага'))
-            ->add('count',array('label' => 'Количество'))
+            ->add('paper',null,array('label' => 'Бумага'))
+            ->add('count',null,array('label' => 'Количество'))
             ->add('color','choice',  array(
                 'empty_value' => false,
                 'choices' => array(
@@ -44,6 +44,7 @@ class FrozenPaperType extends AbstractType
                 'label' => 'Статус бумаги',
                 'required'  => false,
             ))
+            ->add('submit', 'submit', array('label' => 'Сохранить'))
         ;
     }
     

@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca078380-153b-47cb-acb7-5448afb65390" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/add.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/edit.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/list.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/mini_layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Controller/FrozenPaperController.php" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Controller/FrozenPaperController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Form/FrozenPaperType.php" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Form/FrozenPaperType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Controller/OrderController.php" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Controller/OrderController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Entity/Paper.php" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Entity/Paper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/add.html.twig" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/add.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/edit.html.twig" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/edit.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Order/edit.html.twig" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Order/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Paper/edit.html.twig" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Paper/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Printer/edit.html.twig" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Printer/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/layout.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/list.html.twig" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/list.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/mini_layout.html.twig" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/mini_layout.html.twig" />
     </list>
     <ignored path="paper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,30 +32,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="FrozenPaperType.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Form/FrozenPaperType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="46" column="68" selection-start="1586" selection-end="1586" vertical-scroll-proportion="-20.25926" vertical-offset="245" max-vertical-offset="1296">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mini_layout.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/mini_layout.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="48" selection-start="563" selection-end="563" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="774">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/layout.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="19" selection-start="508" selection-end="508" vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="1260">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="edit.html.twig" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Order/edit.html.twig">
+        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/edit.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="63" selection-start="757" selection-end="759" vertical-scroll-proportion="-13.333333" vertical-offset="0" max-vertical-offset="684">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/OrderController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="55" selection-start="2721" selection-end="2723" vertical-scroll-proportion="-12.666667" vertical-offset="972" max-vertical-offset="1710">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FrozenPaperController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/FrozenPaperController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="71" selection-start="1337" selection-end="1337" vertical-scroll-proportion="-17.333334" vertical-offset="162" max-vertical-offset="1872">
+            <state line="3" column="25" selection-start="92" selection-end="101" vertical-scroll-proportion="-2.0" vertical-offset="0" max-vertical-offset="306">
               <folding>
-                <element signature="e#46#103#0" expanded="true" />
+                <element signature="e#187#206#0" expanded="true" />
+                <element signature="e#221#240#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/add.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="25" selection-start="92" selection-end="101" vertical-scroll-proportion="-2.0" vertical-offset="0" max-vertical-offset="306">
+              <folding>
+                <element signature="e#187#206#0" expanded="true" />
+                <element signature="e#221#240#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,7 +86,16 @@
       <file leaf-file-name="list.html.twig" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/list.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="70" selection-start="237" selection-end="237" vertical-scroll-proportion="0.21465077" vertical-offset="0" max-vertical-offset="1008">
+            <state line="40" column="26" selection-start="1853" selection-end="1853" vertical-scroll-proportion="0.84245074" vertical-offset="335" max-vertical-offset="1008">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderType.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Form/OrderType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="12" selection-start="822" selection-end="878" vertical-scroll-proportion="-12.666667" vertical-offset="108" max-vertical-offset="954">
               <folding />
             </state>
           </provider>
@@ -102,13 +130,11 @@
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Entity/frozenPaper.php" />
         <option value="$PROJECT_DIR$/web/app_dev.php" />
-        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Entity/Paper.php" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Entity/Printer.php" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Form/PrinterType.php" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Controller/PrinterController.php" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Controller/AuthController.php" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
-        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/menu.html.twig" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Printer/list.html.twig" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Paper/list.html.twig" />
@@ -124,13 +150,15 @@
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Order/list.html.twig" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Paper/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Printer/edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/mini_layout.html.twig" />
-        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/add.html.twig" />
-        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Form/FrozenPaperType.php" />
-        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Order/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Controller/OrderController.php" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Controller/FrozenPaperController.php" />
+        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Entity/Paper.php" />
+        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Order/edit.html.twig" />
+        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Form/FrozenPaperType.php" />
+        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/mini_layout.html.twig" />
+        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/edit.html.twig" />
+        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/add.html.twig" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/list.html.twig" />
       </list>
     </option>
@@ -409,6 +437,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MainBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -495,11 +549,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43854168" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43854168" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20840243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32916668" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.528125" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -653,13 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="9" selection-start="632" selection-end="632" vertical-scroll-proportion="0.373444" vertical-offset="144" max-vertical-offset="1332">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="39" selection-start="1219" selection-end="1219" vertical-scroll-proportion="0.0" vertical-offset="412" max-vertical-offset="2196">
@@ -677,13 +724,6 @@
     <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Order/add.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="95" selection-start="1417" selection-end="1417" vertical-scroll-proportion="-5.9259257" vertical-offset="380" max-vertical-offset="1260">
           <folding />
         </state>
       </provider>
@@ -759,20 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Form/OrderType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="69" selection-start="493" selection-end="493" vertical-scroll-proportion="0.3360996" vertical-offset="108" max-vertical-offset="954">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Entity/Paper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="0" selection-start="1399" selection-end="1399" vertical-scroll-proportion="-28.11111" vertical-offset="717" max-vertical-offset="1620">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Entity/OrderRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="1" selection-start="237" selection-end="237" vertical-scroll-proportion="0.4107884" vertical-offset="0" max-vertical-offset="482">
@@ -786,13 +812,6 @@
           <folding>
             <element signature="e#46#103#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Order/list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="52" selection-start="499" selection-end="499" vertical-scroll-proportion="-2.7777777" vertical-offset="213" max-vertical-offset="954">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -819,36 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/mini_layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="48" selection-start="563" selection-end="563" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="774">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="21" selection-start="21" selection-end="21" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="587">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/add.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="12" selection-start="12" selection-end="21" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="587">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Form/FrozenPaperType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="22" selection-start="1050" selection-end="1050" vertical-scroll-proportion="-10.925926" vertical-offset="245" max-vertical-offset="1278">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Entity/Order.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="37" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="2034">
@@ -863,13 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Order/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="63" selection-start="757" selection-end="759" vertical-scroll-proportion="-13.333333" vertical-offset="0" max-vertical-offset="684">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/FrozenPaperController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="71" selection-start="1337" selection-end="1337" vertical-scroll-proportion="-17.333334" vertical-offset="162" max-vertical-offset="1872">
@@ -879,9 +861,85 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Order/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="52" selection-start="499" selection-end="499" vertical-scroll-proportion="-2.7777777" vertical-offset="213" max-vertical-offset="954">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/Order/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="25" selection-start="938" selection-end="938" vertical-scroll-proportion="-13.333333" vertical-offset="162" max-vertical-offset="702">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Entity/Paper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="28" selection-start="1462" selection-end="1462" vertical-scroll-proportion="3.0165975" vertical-offset="58" max-vertical-offset="1674">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Form/OrderType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="12" selection-start="822" selection-end="878" vertical-scroll-proportion="-12.666667" vertical-offset="108" max-vertical-offset="954">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Form/FrozenPaperType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="68" selection-start="1586" selection-end="1586" vertical-scroll-proportion="-20.25926" vertical-offset="245" max-vertical-offset="1296">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/mini_layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="48" selection-start="563" selection-end="563" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="774">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="19" selection-start="508" selection-end="508" vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="1260">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="25" selection-start="92" selection-end="101" vertical-scroll-proportion="-2.0" vertical-offset="0" max-vertical-offset="306">
+          <folding>
+            <element signature="e#187#206#0" expanded="true" />
+            <element signature="e#221#240#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/add.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="25" selection-start="92" selection-end="101" vertical-scroll-proportion="-2.0" vertical-offset="0" max-vertical-offset="306">
+          <folding>
+            <element signature="e#187#206#0" expanded="true" />
+            <element signature="e#221#240#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="6" selection-start="1196" selection-end="1196" vertical-scroll-proportion="0.5733042" vertical-offset="260" max-vertical-offset="1332">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/FrozenPaper/list.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="70" selection-start="237" selection-end="237" vertical-scroll-proportion="0.21465077" vertical-offset="0" max-vertical-offset="1008">
+        <state line="40" column="26" selection-start="1853" selection-end="1853" vertical-scroll-proportion="0.84245074" vertical-offset="335" max-vertical-offset="1008">
           <folding />
         </state>
       </provider>
