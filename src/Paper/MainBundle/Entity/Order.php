@@ -30,6 +30,16 @@ class Order extends BaseEntity
      */
     protected $papers;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    protected $color = false;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $typePrint = 1;
+
     public function __construct(){
         $this->papers = new ArrayCollection();
     }
@@ -80,6 +90,38 @@ class Order extends BaseEntity
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * @param mixed $color
+     */
+    public function setColor($color)
+    {
+        $this->color = $color;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * @param mixed $typeprint
+     */
+    public function setTypePrint($typePrint)
+    {
+        $this->typePrint = $typePrint;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTypePrint()
+    {
+        return $this->typePrint;
     }
 
 
