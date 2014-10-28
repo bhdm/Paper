@@ -1,0 +1,47 @@
+{% extends "PaperMainBundle::layout.html.twig" %}
+
+{% block breadcrumb %}
+    {#<ul class="breadcrumb well">#}
+        {#<li><a href="{{ path('admin_main') }}">Домой</a> <span class="divider"></span></li>#}
+        {#<li><a href="{{ path('admin_page_list') }}">Страницы</a> <span class="divider"></span></li>#}
+        {#<li class="active">Изменение<span class="divider"></span></li>#}
+    {#</ul>#}
+{% endblock %}
+
+{% block content %}
+    {#<div class="well">#}
+        {#<iframe src="{{ path('admin_file_list') }}" class="frame"></iframe>#}
+    {#</div>#}
+    <div class="well">
+        {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_MANAGER') %}
+            <form method="POST">
+                {{ form_widget(form) }}
+            </form>
+        {% else %}
+            <div id="paper_mainbundle_order">
+                <div class="form-group">
+                    <label class="control-label required" for="paper_mainbundle_order_title">Название заказа</label>
+                    {{ item.title }}
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="paper_mainbundle_order_enabled">Активность</label>
+                    {{ item.enabledStr }}
+                </div>
+        {% endif %}
+
+    </div>
+    <div class="well">
+        <iframe src="{{ path('frozenPaper_list',{'orderId' : id}) }}" class="frame"></iframe>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .frame{
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+
+{% endblock %}

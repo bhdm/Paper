@@ -32,21 +32,6 @@ class User extends BaseEntity implements UserInterface
     protected $password;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
-     */
-    protected $lastName;
-
-    /**
-     * @ORM\Column(type="string", nullable=true)
-     */
-    protected $firstName;
-
-    /**
-     * @ORM\Column(type="string", nullable=true)
-     */
-    protected $surName;
-
-    /**
      * @ORM\Column(type="string", length=150)
      */
     protected $salt;
@@ -77,11 +62,7 @@ class User extends BaseEntity implements UserInterface
     public function __toString()
     {
 //        return $this->username;
-        if ($this->lastName || $this->firstName || $this->surName){
-            return $this->lastName.'. '.$this->firstName;
-        }else{
-            return 'Анонимный № '.$this->id;
-        }
+        return $this->username;
     }
 
     /**

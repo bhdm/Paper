@@ -1,0 +1,66 @@
+<html>
+    <head>
+        {% block javascripts %}
+            <script src="{{ asset('bundles/papermain/js/jquery-1.11.1.min.js') }}"></script>
+            <script src="{{ asset('bundles/papermain/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('bundles/papermain/js/bootstrap-modal-popover.js') }}"></script>
+
+        {% endblock %}
+
+        {% block stylesheets %}
+            <link href="{{ asset('bundles/papermain/css/bootstrap.min.css') }}" rel="stylesheet">
+            {#<link href="{{ asset('bundles/papermain/ckeditor/contents.css') }}" rel="stylesheet">#}
+            <style>
+                .setting{
+                    text-align: right;
+                }
+            </style>
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">ПАНЕЛЬ <span class="text-danger">[ АДМИНИСТРАТОР ]</span></a>
+                    </div>
+                    <div class="navbar-right">
+                        <div class="collapse navbar-collapse">
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <ul class="nav navbar-nav">
+                                    {#<li><a href="{{ path('order_list') }}" target="_blank">На сайт</a></li>#}
+                                    <li><a href="{{ path('_security_logout') }}">Выйти</a></li>
+                                </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            {% block alert %}{% endblock %}
+            {#<div class="alert alert-success" role="alert"></div>#}
+            {#<div class="alert alert-info" role="alert"></div>#}
+            {#<div class="alert alert-warning" role="alert"></div>#}
+            {#<div class="alert alert-danger" role="alert"></div>#}
+            <div class="row">
+                <div class="col-md-3">
+                    {% block menu %}
+                        {% include 'PaperMainBundle::menu.html.twig' %}
+                    {% endblock %}
+                </div>
+                <div class="col-md-9">
+                    {% block breadcrumb %}
+                        <ul class="breadcrumb well">
+                                <li><a href="#">Домой</a> <span class="divider"></span></li>
+                                <li><a href="#">Библиотека</a> <span class="divider"></span></li>
+                                <li class="active">Данные</li>
+                        </ul>
+                    {% endblock %}
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </div>
+        {% block body %}{% endblock %}
+    </body>
+</html>

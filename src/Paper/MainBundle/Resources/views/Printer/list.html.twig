@@ -1,0 +1,48 @@
+{% extends "PaperMainBundle::layout.html.twig" %}
+
+{% block breadcrumb %}
+    <a href="{{ path('printer_add') }}"><span class="btn btn-primary">Добавить</span></a>
+    <br style="clear: both"/>
+    <br style="clear: both"/>
+{% endblock %}
+
+{% block content %}
+    <div class="well">
+        <table class="table">
+            <tr>
+                <th>№</th>
+                <th>Название</th>
+                <th></th>
+                <th>Статус</th>
+                <th class="setting">Инструменты</th>
+            </tr>
+            {% for item in pagination %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.title }}</td>
+                    <td></td>
+                    <td>{{ item.enabledStr }}</td>
+                    <td class="setting">
+                        {% spaceless %}
+                        <a href="{{ path('printer_edit',{'id' : item.id}) }}">
+                            <button type="button" class="btn btn-default btn-bg">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </button>
+                        </a>
+                            &nbsp;
+                            &nbsp;
+                        <a href="{{ path('printer_remove',{'id' : item.id}) }}">
+                            <button type="button" class="btn btn-default btn-bg">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </a>
+                        {% endspaceless %}
+                    </td>
+                </tr>
+            {% endfor%}
+        </table>
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    </div>
+{% endblock %}

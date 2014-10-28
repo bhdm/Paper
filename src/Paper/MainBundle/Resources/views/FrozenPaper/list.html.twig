@@ -1,0 +1,65 @@
+{% extends "PaperMainBundle::mini_layout.html.twig" %}
+
+
+{% block content %}
+    <div class="container">
+        <ul class="breadcrumb">
+            <div style="float: right">
+                <a href="{{ path('frozenPaper_add',{'orderId' : orderId}) }}">Добавить бумагу в заказ</a> <span class="divider"></span>
+            </div>
+        </ul>
+        <table class="table">
+            <tr>
+                <th>Бумага</th>
+                <th>Количество</th>
+                <th>Цветность</th>
+                <th>Кол-во сторон</th>
+                <th>Статус</th>
+                <th class="setting">Инструменты</th>
+            </tr>
+            {% for item in pagination %}
+                <tr>
+                    <td>{{ item.paper.title }}</td>
+                    <td>{{ item.count }}</td>
+                    <td>{{ item.color == true ? 'Цветная'  : 'ЧБ' }}</td>
+                    <td>{{ item.typePrint == 1 ? '1'  : '2' }}</td>
+                    <td>
+                        <div class="btn-group btn-group-sm">
+                            <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
+                                {% if item.status == 0 %}
+                                    <span class="text-success">Резерв</span>
+                                {% elseif item.status == 1 %}
+                                    <span class="text-danger">Потрачено</span>
+                                {% endif %}
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ path('frozenPaper_status',{'id' : item.id, 'status' : 0}) }}">Резерв</a></li>
+                                <li><a href="{{ path('frozenPaper_status',{'id' : item.id, 'status' : 1}) }}">Потрачено</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td class="setting">
+                        {% spaceless %}
+                            <a href="{{ path('frozenPaper_edit',{'orderId' : orderId, 'id' : item.id }) }}">
+                                <button type="button" class="btn btn-default btn-bg">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
+                            </a>
+                            &nbsp;
+                            &nbsp;
+                            <a href="{{ path('frozenPaper_remove',{'id' : item.id}) }}">
+                                <button type="button" class="btn btn-default btn-bg">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </button>
+                            </a>
+                        {% endspaceless %}
+                    </td>
+                </tr>
+            {% endfor%}
+        </table>
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    </div>
+{% endblock %}
