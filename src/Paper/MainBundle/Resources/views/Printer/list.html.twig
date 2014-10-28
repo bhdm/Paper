@@ -1,7 +1,7 @@
 {% extends "PaperMainBundle::layout.html.twig" %}
 
 {% block breadcrumb %}
-    <a href="{{ path('paper_add') }}"><span class="btn btn-primary">Добавить</span></a>
+    <a href="{{ path('printer_add') }}"><span class="btn btn-primary">Добавить</span></a>
     <br style="clear: both"/>
     <br style="clear: both"/>
 {% endblock %}
@@ -13,7 +13,6 @@
                 <th>№</th>
                 <th>Название</th>
                 <th></th>
-                <th>Количество</th>
                 <th>Статус</th>
                 <th class="setting">Инструменты</th>
             </tr>
@@ -22,18 +21,17 @@
                     <td>{{ item.id }}</td>
                     <td>{{ item.title }}</td>
                     <td></td>
-                    <td>{{ item.count }}</td>
                     <td>{{ item.enabledStr }}</td>
                     <td class="setting">
                         {% spaceless %}
-                        <a href="{{ path('paper_edit',{'id' : item.id}) }}">
+                        <a href="{{ path('printer_edit',{'id' : item.id}) }}">
                             <button type="button" class="btn btn-default btn-sm">
                                 <span class="glyphicon glyphicon-pencil"></span>
                             </button>
                         </a>
                             &nbsp;
                             &nbsp;
-                        <a href="{{ path('paper_remove',{'id' : item.id}) }}">
+                        <a href="{{ path('printer_remove',{'id' : item.id}) }}">
                             <button type="button" class="btn btn-default btn-sm">
                                 <span class="glyphicon glyphicon-remove"></span>
                             </button>

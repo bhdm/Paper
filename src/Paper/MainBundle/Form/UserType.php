@@ -15,21 +15,19 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('username')
-            ->add('password', 'repeated', array('type' => 'password', 'invalid_message' => 'пароли не совпадают', 'label' =>'Пароль'))
-            ->add('lastName', null, array('label' => 'Фамилия'))
-            ->add('firstName', null, array('label' => 'Имя'))
-            ->add('surName', null, array('label' => 'Отчество'))
-            ->add('roles','choice',  array(
-                'empty_value' => false,
-                'choices' => array(
-                    'ROLE_ADMIN' => 'Администратор',
-                    'ROLE_MANAGER' => 'Менеджер',
-                    'ROLE_PRESSMAN' => 'Печатник',
-                ),
-                'label' => 'Активность',
-                'required'  => false,
-            ))
+            ->add('username', null, array('label' => 'Логин'))
+            ->add('password', 'repeated', array('type' => 'password', 'invalid_message' => 'пароли не совпадают', 'first_options'  => array('label' => 'Пароль'),
+                'second_options' => array('label' => 'Повторите пароль'),))
+//            ->add('roles','choice',  array(
+//                'empty_value' => false,
+//                'choices' => array(
+//                    'ROLE_ADMIN' => 'Администратор',
+//                    'ROLE_MANAGER' => 'Менеджер',
+//                    'ROLE_PRESSMAN' => 'Печатник',
+//                ),
+//                'label' => 'Активность',
+//                'required'  => false,
+//            ))
             ->add('enabled','choice',  array(
                 'empty_value' => false,
                 'choices' => array(

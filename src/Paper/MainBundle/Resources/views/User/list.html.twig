@@ -1,7 +1,7 @@
 {% extends "PaperMainBundle::layout.html.twig" %}
 
 {% block breadcrumb %}
-    <a href="{{ path('paper_add') }}"><span class="btn btn-primary">Добавить</span></a>
+    <a href="{{ path('user_add') }}"><span class="btn btn-primary">Добавить</span></a>
     <br style="clear: both"/>
     <br style="clear: both"/>
 {% endblock %}
@@ -11,29 +11,27 @@
         <table class="table">
             <tr>
                 <th>№</th>
-                <th>Название</th>
+                <th>ФИО</th>
                 <th></th>
-                <th>Количество</th>
-                <th>Статус</th>
+                <th>Права</th>
                 <th class="setting">Инструменты</th>
             </tr>
             {% for item in pagination %}
                 <tr>
                     <td>{{ item.id }}</td>
-                    <td>{{ item.title }}</td>
+                    <td>{{ item }}</td>
                     <td></td>
-                    <td>{{ item.count }}</td>
-                    <td>{{ item.enabledStr }}</td>
+                    <td>{{ item.roles[0] }}</td>
                     <td class="setting">
                         {% spaceless %}
-                        <a href="{{ path('paper_edit',{'id' : item.id}) }}">
+                        <a href="{{ path('user_edit',{'id' : item.id}) }}">
                             <button type="button" class="btn btn-default btn-sm">
                                 <span class="glyphicon glyphicon-pencil"></span>
                             </button>
                         </a>
                             &nbsp;
                             &nbsp;
-                        <a href="{{ path('paper_remove',{'id' : item.id}) }}">
+                        <a href="{{ path('user_remove',{'id' : item.id}) }}">
                             <button type="button" class="btn btn-default btn-sm">
                                 <span class="glyphicon glyphicon-remove"></span>
                             </button>

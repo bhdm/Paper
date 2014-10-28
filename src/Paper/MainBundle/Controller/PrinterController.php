@@ -7,20 +7,19 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\Security\Core\SecurityContext;
 use Symfony\Component\HttpFoundation\Request;
-use Paper\MainBundle\Entity\Order;
-use Paper\MainBundle\Form\OrderType;
+use Paper\MainBundle\Entity\Printer;
+use Paper\MainBundle\Form\PrinterType;
 
 /**
- * Class OrderController
+ * Class PrinterController
  * @package Paper\MainBundle\Controller
- * @Route("/")
- * @Route("/order")
+ * @Route("/printer")
  */
-class OrderController extends Controller{
-        const ENTITY_NAME = 'Order';
+class PrinterController extends Controller{
+        const ENTITY_NAME = 'Printer';
     /**
-     * @Security("has_role('ROLE_USER')")
-     * @Route("/", name="order_list")
+     * @Security("has_role('ROLE_ADMIN')")
+     * @Route("/", name="printer_list")
      * @Template()
      */
     public function listAction(){
@@ -29,7 +28,7 @@ class OrderController extends Controller{
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
             $items,
-            $this->get('request')->query->get('order', 1),
+            $this->get('request')->query->get('printer', 1),
             20
         );
 
@@ -37,14 +36,14 @@ class OrderController extends Controller{
     }
 
     /**
-     * @Security("has_role('ROLE_USER')")
-     * @Route("/add", name="order_add")
+     * @Security("has_role('ROLE_ADMIN')")
+     * @Route("/add", name="printer_add")
      * @Template()
      */
     public function addAction(Request $request){
         $em = $this->getDoctrine()->getManager();
-        $item = new Order();
-        $form = $this->createForm(new OrderType($em), $item);
+        $item = new Printer();
+        $form = $this->createForm(new PrinterType($em), $item);
         $formData = $form->handleRequest($request);
 
         if ($request->getMethod() == 'POST'){
@@ -53,21 +52,21 @@ class OrderController extends Controller{
                 $em->persist($item);
                 $em->flush();
                 $em->refresh($item);
-                return $this->redirect($this->generateUrl('order_list'));
+                return $this->redirect($this->generateUrl('printer_list'));
             }
         }
         return array('form' => $form->createView());
     }
 
     /**
-     * @Security("has_role('ROLE_USER')")
-     * @Route("/edit/{id}", name="order_edit")
+     * @Security("has_role('ROLE_ADMIN')")
+     * @Route("/edit/{id}", name="printer_edit")
      * @Template()
      */
     public function editAction(Request $request, $id){
         $em = $this->getDoctrine()->getManager();
         $item = $this->getDoctrine()->getRepository('PaperMainBundle:'.self::ENTITY_NAME)->findOneById($id);
-        $form = $this->createForm(new OrderType($em), $item);
+        $form = $this->createForm(new PrinterType($em), $item);
         $formData = $form->handleRequest($request);
 
         if ($request->getMethod() == 'POST'){
@@ -75,15 +74,15 @@ class OrderController extends Controller{
                 $item = $formData->getData();
                 $em->flush($item);
                 $em->refresh($item);
-                return $this->redirect($this->generateUrl('order_list'));
+                return $this->redirect($this->generateUrl('printer_list'));
             }
         }
         return array('form' => $form->createView());
     }
 
     /**
-     * @Security("has_role('ROLE_USER')")
-     * @Route("/remove/{id}", name="order_remove")
+     * @Security("has_role('ROLE_ADMIN')")
+     * @Route("/remove/{id}", name="printer_remove")
      */
     public function removeAction(Request $request, $id){
         $em = $this->getDoctrine()->getManager();

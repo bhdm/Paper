@@ -18,6 +18,23 @@ class AuthController extends Controller
     public function loginAction()
     {
 
+//        $manager = $this->getDoctrine()->getManager();
+//        // создание пользователя
+//        $user = new User();
+//        $user->setUsername('admin');
+//        $user->setSalt(md5(time()));
+//        $encoder = new MessageDigestPasswordEncoder('sha512', true, 10);
+//        $password = $encoder->encodePassword('wzcwzc', $user->getSalt());
+//        $user->setPassword($password);
+//
+//        $user->setRoles('ROLE_ADMIN');
+//        $user->setLastName('admin');
+//        $user->setFirstName('admin');
+//        $user->setSurName('admin');
+//        $manager->persist($user);
+//        $manager->flush($user);
+
+
 //        $error = null;
 //        if (!$this->get('request')->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
 //            $error = 'Неправильный логин или пароль';
