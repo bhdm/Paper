@@ -28,14 +28,14 @@
                     <td>{{ item.enabledStr }}</td>
                     <td class="setting">
                         {% spaceless %}
-                        <a href="{{ path('admin_page_edit',{'id' : item.id}) }}">
+                        <a href="{{ path('paper_edit',{'id' : item.id}) }}">
                             <button type="button" class="btn btn-default btn-sm">
                                 <span class="glyphicon glyphicon-pencil"></span>
                             </button>
                         </a>
                             &nbsp;
                             &nbsp;
-                        <a href="{{ path('admin_page_remove',{'id' : item.id}) }}">
+                        <a href="{{ path('paper_remove',{'id' : item.id}) }}">
                             <button type="button" class="btn btn-default btn-sm">
                                 <span class="glyphicon glyphicon-remove"></span>
                             </button>
