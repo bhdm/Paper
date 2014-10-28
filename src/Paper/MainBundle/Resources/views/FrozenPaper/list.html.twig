@@ -23,18 +23,29 @@
                     <td>{{ item.count }}</td>
                     <td>{{ item.color == true ? 'Цветная'  : 'ЧБ' }}</td>
                     <td>{{ item.typePrint == 1 ? '1'  : '2' }}</td>
-                    <td>{{ item.status == 0 ? 'Резерв' : 'Потрачено' }}</td>
+                    <td>
+                        <div class="btn-group btn-group-sm">
+                            <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
+                                {{ item.status == 0 ? 'Резерв' : 'Потрачено' }}
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ path('frozenPaper_status',{'id' : item.id, 'status' : 0}) }}">Резерв</a></li>
+                                <li><a href="{{ path('frozenPaper_status',{'id' : item.id, 'status' : 1}) }}">Потрачено</a></li>
+                            </ul>
+                        </div>
+                    </td>
                     <td class="setting">
                         {% spaceless %}
                             <a href="{{ path('frozenPaper_edit',{'orderId' : orderId, 'id' : item.id }) }}">
-                                <button type="button" class="btn btn-default btn-sm">
+                                <button type="button" class="btn btn-default btn-bg">
                                     <span class="glyphicon glyphicon-pencil"></span>
                                 </button>
                             </a>
                             &nbsp;
                             &nbsp;
                             <a href="{{ path('frozenPaper_remove',{'id' : item.id}) }}">
-                                <button type="button" class="btn btn-default btn-sm">
+                                <button type="button" class="btn btn-default btn-bg">
                                     <span class="glyphicon glyphicon-remove"></span>
                                 </button>
                             </a>

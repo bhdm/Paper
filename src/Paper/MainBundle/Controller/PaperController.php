@@ -93,4 +93,27 @@ class PaperController extends Controller{
         }
         return $this->redirect($request->headers->get('referer'));
     }
+
+    /**
+     * @Security("has_role('ROLE_ADMIN')")
+     * @Route("/addCount/{id}", name="paper_addcount")
+     */
+    public function addCountAction(Request $request, $id){
+        $em = $this->getDoctrine()->getManager();
+        $item = new Paper();
+        $form = $this->createForm(new PaperType($em), $item);
+        $formData = $form->handleRequest($request);
+
+        if ($request->getMethod() == 'POST'){
+            if ($formData->isValid()){
+                $item = $formData->getData();
+                $em->persist($item);
+                $em->flush();
+                $em->refresh($item);
+                return $this->redirect($this->generateUrl('paper_list'));
+            }
+        }
+        return array('form' => $form->createView());
+    }
+
 }
