@@ -1,4 +1,4 @@
-{% extends "paperMainBundle::layout.html.twig" %}
+{% extends "PaperMainBundle::layout.html.twig" %}
 
 {% block breadcrumb %}
     {#<ul class="breadcrumb well">#}
@@ -16,6 +16,9 @@
         <form method="POST">
             {{ form_widget(form) }}
         </form>
+    </div>
+    <div class="well">
+        <iframe src="{{ path('frozenPaper_list',{'orderId' : id}) }}" class="frame"></iframe>
     </div>
 {% endblock %}
 

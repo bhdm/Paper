@@ -1,0 +1,10 @@
+{% extends "PaperMainBundle::mini_layout.html.twig" %}
+
+{% block content %}
+    <div class="">
+        Изменить бумагу в заказе:
+        <form method="POST">
+            {{ form_widget(form) }}
+        </form>
+    </div>
+{% endblock %}

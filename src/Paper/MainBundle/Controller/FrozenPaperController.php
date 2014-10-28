@@ -19,11 +19,12 @@ class FrozenPaperController extends Controller{
         const ENTITY_NAME = 'FrozenPaper';
     /**
      * @Security("has_role('ROLE_ADMIN')")
-     * @Route("/", name="frozenPaper_list")
+     * @Route("/{orderId}", name="frozenPaper_list")
      * @Template()
      */
-    public function listAction(){
-        $items = $this->getDoctrine()->getRepository('PaperMainBundle:'.self::ENTITY_NAME)->findAll();
+    public function listAction($orderId){
+        $order = $this->getDoctrine()->getRepository('PaperMainBundle:Order')->findOneById($orderId);
+        $items = $this->getDoctrine()->getRepository('PaperMainBundle:'.self::ENTITY_NAME)->findByOrder($order);
 
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
@@ -32,23 +33,24 @@ class FrozenPaperController extends Controller{
             20
         );
 
-        return array('pagination' => $pagination);
+        return array('pagination' => $pagination, 'orderId' => $orderId);
     }
 
     /**
      * @Security("has_role('ROLE_ADMIN')")
-     * @Route("/add", name="frozenPaper_add")
+     * @Route("/add/{orderId}", name="frozenPaper_add")
      * @Template()
      */
-    public function addAction(Request $request){
+    public function addAction(Request $request, $orderId){
         $em = $this->getDoctrine()->getManager();
         $item = new FrozenPaper();
         $form = $this->createForm(new FrozenPaperType($em), $item);
         $formData = $form->handleRequest($request);
-
+        $order = $this->getDoctrine()->getRepository('PaperMainBundle:Order')->findOneById($orderId);
         if ($request->getMethod() == 'POST'){
             if ($formData->isValid()){
                 $item = $formData->getData();
+                $item->setOrder($order);
                 $em->persist($item);
                 $em->flush();
                 $em->refresh($item);
@@ -60,24 +62,25 @@ class FrozenPaperController extends Controller{
 
     /**
      * @Security("has_role('ROLE_ADMIN')")
-     * @Route("/edit/{id}", name="frozenPaper_edit")
+     * @Route("/edit/{orderId}/{id}", name="frozenPaper_edit")
      * @Template()
      */
-    public function editAction(Request $request, $id){
+    public function editAction(Request $request, $orderId, $id){
         $em = $this->getDoctrine()->getManager();
         $item = $this->getDoctrine()->getRepository('PaperMainBundle:'.self::ENTITY_NAME)->findOneById($id);
         $form = $this->createForm(new FrozenPaperType($em), $item);
         $formData = $form->handleRequest($request);
-
+        $order = $this->getDoctrine()->getRepository('PaperMainBundle:Order')->findOneById($orderId);
         if ($request->getMethod() == 'POST'){
             if ($formData->isValid()){
                 $item = $formData->getData();
+                $item->setOrder($order);
                 $em->flush($item);
                 $em->refresh($item);
                 return $this->redirect($this->generateUrl('frozenPaper_list'));
             }
         }
-        return array('form' => $form->createView());
+        return array('form' => $form->createView(), 'orderId' => $orderId);
     }
 
     /**

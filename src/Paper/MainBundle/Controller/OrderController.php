@@ -78,7 +78,7 @@ class OrderController extends Controller{
                 return $this->redirect($this->generateUrl('order_list'));
             }
         }
-        return array('form' => $form->createView());
+        return array('form' => $form->createView(), 'id' => $id);
     }
 
     /**

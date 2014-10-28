@@ -30,7 +30,7 @@ class FrozenPaperType extends AbstractType
                 'empty_value' => false,
                 'choices' => array(
                     '1' => 'Одностороння',
-                    '0' => 'Двусторонняя',
+                    '2' => 'Двусторонняя',
                 ),
                 'label' => 'Тип печати',
                 'required'  => false,

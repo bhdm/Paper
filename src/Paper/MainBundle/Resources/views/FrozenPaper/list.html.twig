@@ -1,0 +1,51 @@
+{% extends "PaperMainBundle::mini_layout.html.twig" %}
+
+
+{% block content %}
+    <div class="">
+        <ul class="breadcrumb">
+            <div style="float: right">
+                <a href="{{ path('frozenPaper_add',{'orderId' : orderId}) }}">Добавить бумагу в заказ</a> <span class="divider"></span>
+            </div>
+        </ul>
+        <table class="table">
+            <tr>
+                <th>Бумага</th>
+                <th>Количество</th>
+                <th>Цветность</th>
+                <th>Кол-во сторон</th>
+                <th>Принтер</th>
+                <th>Статус</th>
+                <th class="setting">Инструменты</th>
+            </tr>
+            {% for item in pagination %}
+                <tr>
+                    <td>{{ item.paper.title }}</td>
+                    <td>{{ item.count }}</td>
+                    <td>{{ item.color == true ? 'Цветная'  : 'ЧБ' }}</td>
+                    <td>{{ item.typePrint == 1 ? '1'  : '2' }}</td>
+                    <td>{{ item.status }}</td>
+                    <td class="setting">
+                        {% spaceless %}
+                            <a href="{{ path('frozenPaper_edit',{'orderId' : orderId, 'id' : item.id }) }}">
+                                <button type="button" class="btn btn-default btn-sm">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
+                            </a>
+                            &nbsp;
+                            &nbsp;
+                            <a href="{{ path('frozenPaper_remove',{'id' : item.id}) }}">
+                                <button type="button" class="btn btn-default btn-sm">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </button>
+                            </a>
+                        {% endspaceless %}
+                    </td>
+                </tr>
+            {% endfor%}
+        </table>
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    </div>
+{% endblock %}
