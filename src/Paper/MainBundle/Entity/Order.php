@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Paper
  *
  * @ORM\Table(name="booking")
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="OrderRepository")
  */
 class Order extends BaseEntity
 {
@@ -29,16 +29,6 @@ class Order extends BaseEntity
      * @ORM\OneToMany(targetEntity="FrozenPaper", mappedBy="order")
      */
     protected $papers;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    protected $color = false;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    protected $typePrint = 1;
 
     /**
      * @ORM\Column(type="integer")
@@ -97,37 +87,6 @@ class Order extends BaseEntity
         return $this->user;
     }
 
-    /**
-     * @param mixed $color
-     */
-    public function setColor($color)
-    {
-        $this->color = $color;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getColor()
-    {
-        return $this->color;
-    }
-
-    /**
-     * @param mixed $typeprint
-     */
-    public function setTypePrint($typePrint)
-    {
-        $this->typePrint = $typePrint;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTypePrint()
-    {
-        return $this->typePrint;
-    }
 
     /**
      * @param mixed $status

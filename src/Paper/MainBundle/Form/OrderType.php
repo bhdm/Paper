@@ -16,24 +16,6 @@ class OrderType extends AbstractType
     {
         $builder
             ->add('title', null, array('label' => 'Название заказа'))
-            ->add('color','choice',  array(
-                'empty_value' => false,
-                'choices' => array(
-                    '1' => 'Черно-белая',
-                    '0' => 'цветная',
-                ),
-                'label' => 'Цветность печати',
-                'required'  => false,
-            ))
-            ->add('typePrint','choice',  array(
-                'empty_value' => false,
-                'choices' => array(
-                    '1' => 'Одностороння',
-                    '0' => 'Двусторонняя',
-                ),
-                'label' => 'Тип печати',
-                'required'  => false,
-            ))
             ->add('enabled','choice',  array(
                 'empty_value' => false,
                 'choices' => array(
