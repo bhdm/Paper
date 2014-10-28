@@ -54,7 +54,7 @@ class FrozenPaperController extends Controller{
                 $em->persist($item);
                 $em->flush();
                 $em->refresh($item);
-                return $this->redirect($this->generateUrl('frozenPaper_list'));
+                return $this->redirect($this->generateUrl('frozenPaper_list',array('orderId'=>$orderId)));
             }
         }
         return array('form' => $form->createView());
@@ -77,7 +77,7 @@ class FrozenPaperController extends Controller{
                 $item->setOrder($order);
                 $em->flush($item);
                 $em->refresh($item);
-                return $this->redirect($this->generateUrl('frozenPaper_list'));
+                return $this->redirect($this->generateUrl('frozenPaper_list',array('orderId'=>$orderId)));
             }
         }
         return array('form' => $form->createView(), 'orderId' => $orderId);
