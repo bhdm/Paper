@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca078380-153b-47cb-acb7-5448afb65390" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Entity/Order.php" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Entity/Order.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Form/OrderType.php" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Form/OrderType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Form/PaperType.php" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Form/PaperType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Form/UserType.php" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Form/UserType.php" />
     </list>
     <ignored path="paper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,24 +27,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Paper.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Entity/Paper.php">
+      <file leaf-file-name="OrderType.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Form/OrderType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="0" selection-start="1307" selection-end="1307" vertical-scroll-proportion="-12.518518" vertical-offset="1084" max-vertical-offset="1566">
-              <folding>
-                <element signature="e#42#90#0" expanded="true" />
-              </folding>
+            <state line="36" column="12" selection-start="1148" selection-end="1530" vertical-scroll-proportion="-6.5185184" vertical-offset="436" max-vertical-offset="1278">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Order.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Entity/Order.php">
+      <file leaf-file-name="PaperType.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Form/PaperType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="1" selection-start="181" selection-end="181" vertical-scroll-proportion="0.2614108" vertical-offset="0" max-vertical-offset="2430">
-              <folding>
-                <element signature="e#42#90#0" expanded="true" />
-              </folding>
+            <state line="19" column="12" selection-start="569" selection-end="941" vertical-scroll-proportion="-9.333333" vertical-offset="54" max-vertical-offset="972">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserType.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Form/UserType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="47" selection-start="1000" selection-end="1000" vertical-scroll-proportion="0.7385892" vertical-offset="76" max-vertical-offset="1206">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -72,6 +78,9 @@
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Entity/Paper.php" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/Paper/MainBundle/Entity/Order.php" />
+        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Form/OrderType.php" />
+        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Form/PaperType.php" />
+        <option value="$PROJECT_DIR$/src/Paper/MainBundle/Form/UserType.php" />
       </list>
     </option>
   </component>
@@ -173,6 +182,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MainBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Form" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -187,6 +222,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Paper/MainBundle/Resources/views" />
+      <recent name="$PROJECT_DIR$/src/Paper/MainBundle/Resources/public" />
       <recent name="$PROJECT_DIR$/src/Paper/MainBundle/Entity" />
       <recent name="$PROJECT_DIR$/src/Paper/MainBundle" />
     </key>
@@ -332,17 +369,52 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="79" column="0" selection-start="1307" selection-end="1307" vertical-scroll-proportion="-12.518518" vertical-offset="1084" max-vertical-offset="1566">
           <folding>
-            <element signature="e#42#90#0" expanded="true" />
+            <element signature="e#42#90#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Entity/Order.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="1" selection-start="181" selection-end="181" vertical-scroll-proportion="0.2614108" vertical-offset="0" max-vertical-offset="2430">
+        <state line="19" column="7" selection-start="405" selection-end="405" vertical-scroll-proportion="-12.666667" vertical-offset="0" max-vertical-offset="2430">
           <folding>
-            <element signature="e#42#90#0" expanded="true" />
+            <element signature="e#42#90#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/pagination.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="2.0" vertical-offset="54" max-vertical-offset="1710">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="22" selection-start="342" selection-end="342" vertical-scroll-proportion="0.2614108" vertical-offset="0" max-vertical-offset="2430">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Form/OrderType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="12" selection-start="1148" selection-end="1530" vertical-scroll-proportion="-6.5185184" vertical-offset="436" max-vertical-offset="1278">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Form/PaperType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="12" selection-start="569" selection-end="941" vertical-scroll-proportion="-9.333333" vertical-offset="54" max-vertical-offset="972">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Form/UserType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="47" selection-start="1000" selection-end="1000" vertical-scroll-proportion="0.7385892" vertical-offset="76" max-vertical-offset="1206">
+          <folding />
         </state>
       </provider>
     </entry>

@@ -15,12 +15,18 @@ class PaperType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('count')
-            ->add('enabled')
-            ->add('created')
-            ->add('updated')
-            ->add('orders')
+            ->add('title',null, array('label' => 'Название бумаги'))
+            ->add('count',null, array('label' => 'Количество'))
+            ->add('enabled','choice',  array(
+                'empty_value' => false,
+                'choices' => array(
+                    '1' => 'Активен',
+                    '0' => 'Заблокирован',
+                ),
+                'label' => 'Активность',
+                'required'  => false,
+            ))
+            ->add('submit', 'submit', array('label' => 'Сохранить'))
         ;
     }
     

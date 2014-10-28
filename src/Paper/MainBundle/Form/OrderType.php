@@ -15,14 +15,35 @@ class OrderType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('color')
-            ->add('typePrint')
-            ->add('enabled')
-            ->add('created')
-            ->add('updated')
-            ->add('user')
-            ->add('papers')
+            ->add('title', null, array('label' => 'Название заказа'))
+            ->add('color','choice',  array(
+                'empty_value' => false,
+                'choices' => array(
+                    '1' => 'Черно-белая',
+                    '0' => 'цветная',
+                ),
+                'label' => 'Цветность печати',
+                'required'  => false,
+            ))
+            ->add('typePrint','choice',  array(
+                'empty_value' => false,
+                'choices' => array(
+                    '1' => 'Одностороння',
+                    '0' => 'Двусторонняя',
+                ),
+                'label' => 'Тип печати',
+                'required'  => false,
+            ))
+            ->add('enabled','choice',  array(
+                'empty_value' => false,
+                'choices' => array(
+                    '1' => 'Активен',
+                    '0' => 'Заблокирован',
+                ),
+                'label' => 'Активность',
+                'required'  => false,
+            ))
+            ->add('submit', 'submit', array('label' => 'Сохранить'))
         ;
     }
     
