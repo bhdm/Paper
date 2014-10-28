@@ -25,6 +25,16 @@ class OrderType extends AbstractType
                 'label' => 'Активность',
                 'required'  => false,
             ))
+            ->add('status','choice',  array(
+                'empty_value' => false,
+                'choices' => array(
+                    '0' => 'Новый',
+                    '1' => 'В производстве',
+                    '2' => 'Сделан',
+                ),
+                'label' => 'Активность',
+                'required'  => false,
+            ))
             ->add('submit', 'submit', array('label' => 'Сохранить'))
         ;
     }

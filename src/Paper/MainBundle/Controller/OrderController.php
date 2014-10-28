@@ -94,4 +94,18 @@ class OrderController extends Controller{
         }
         return $this->redirect($request->headers->get('referer'));
     }
+
+    /**
+     * @Security("has_role('ROLE_USER')")
+     * @Route("/status/{id}/{status}", name="paper_status")
+     */
+    public function statusAction(Request $request, $id, $status){
+        $em = $this->getDoctrine()->getManager();
+        $item = $em->getRepository('PaperMainBundle:'.self::ENTITY_NAME)->findOneById($id);
+        if ($item){
+            $item->setStatus($status);
+            $em->flush();
+        }
+        return $this->redirect($request->headers->get('referer'));
+    }
 }
