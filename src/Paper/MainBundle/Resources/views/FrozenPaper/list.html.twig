@@ -23,7 +23,7 @@
                     <td>{{ item.count }}</td>
                     <td>{{ item.color == true ? 'Цветная'  : 'ЧБ' }}</td>
                     <td>{{ item.typePrint == 1 ? '1'  : '2' }}</td>
-                    <td>{{ item.status }}</td>
+                    <td>{{ item.status == 0 ? 'Резерв' : 'Потрачено' }}</td>
                     <td class="setting">
                         {% spaceless %}
                             <a href="{{ path('frozenPaper_edit',{'orderId' : orderId, 'id' : item.id }) }}">

@@ -53,7 +53,7 @@ class OrderController extends Controller{
                 $em->persist($item);
                 $em->flush();
                 $em->refresh($item);
-                return $this->redirect($this->generateUrl('order_list'));
+                return $this->redirect($this->generateUrl('order_edit', array('id' => $item->getId())));
             }
         }
         return array('form' => $form->createView());
@@ -78,7 +78,7 @@ class OrderController extends Controller{
                 return $this->redirect($this->generateUrl('order_list'));
             }
         }
-        return array('form' => $form->createView(), 'id' => $id);
+        return array('form' => $form->createView(), 'id' => $id,'item' => $item);
     }
 
     /**

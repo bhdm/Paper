@@ -13,9 +13,22 @@
         {#<iframe src="{{ path('admin_file_list') }}" class="frame"></iframe>#}
     {#</div>#}
     <div class="well">
-        <form method="POST">
-            {{ form_widget(form) }}
-        </form>
+        {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_MANAGER') %}
+            <form method="POST">
+                {{ form_widget(form) }}
+            </form>
+        {% else %}
+            <div id="paper_mainbundle_order">
+                <div class="form-group">
+                    <label class="control-label required" for="paper_mainbundle_order_title">Название заказа</label>
+                    {{ item.title }}
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="paper_mainbundle_order_enabled">Активность</label>
+                    {{ item.enabledStr }}
+                </div>
+        {% endif %}
+
     </div>
     <div class="well">
         <iframe src="{{ path('frozenPaper_list',{'orderId' : id}) }}" class="frame"></iframe>
