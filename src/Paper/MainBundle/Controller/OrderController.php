@@ -13,6 +13,7 @@ use Paper\MainBundle\Form\OrderType;
 /**
  * Class OrderController
  * @package Paper\MainBundle\Controller
+ * @Route("/")
  * @Route("/order")
  */
 class OrderController extends Controller{
