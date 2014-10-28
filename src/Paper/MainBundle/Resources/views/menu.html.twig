@@ -7,6 +7,7 @@
                 Заказы
             </a>
         </li>
+        {% if is_granted('ROLE_MANAGER') %}
         <li class="">
             <a href="{{ path('paper_list') }}">
                 <i class="glyphicon glyphicon-list-alt"></i>
@@ -25,12 +26,15 @@
                 Принтеры
             </a>
         </li>
+        {% endif %}
+        {% if is_granted('ROLE_ADMIN') %}
         <li class="">
             <a href="{{ path('statistic_list') }}">
                 <i class="glyphicon glyphicon-stats"></i>
                 Статистика
             </a>
         </li>
+        {% endif %}
 
     </ul>
 </div>

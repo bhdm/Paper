@@ -19,7 +19,7 @@ class UserType extends AbstractType
             ->add('password', 'repeated', array('type' => 'password', 'invalid_message' => 'пароли не совпадают', 'first_options'  => array('label' => 'Пароль'),
                 'second_options' => array('label' => 'Повторите пароль'),))
 
-            ->add('roles','choice',  array(
+            ->add('userRoles','choice',  array(
                 'empty_value' => false,
                 'choices' => array(
                     'ROLE_ADMIN' => 'Администратор',

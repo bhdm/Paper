@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\Security\Core\SecurityContext;
+use Symfony\Component\Security\Core\Encoder\MessageDigestPasswordEncoder;
 use Symfony\Component\HttpFoundation\Request;
 use Paper\MainBundle\Entity\User;
 use Paper\MainBundle\Form\UserType;
@@ -49,6 +50,10 @@ class UserController extends Controller{
         if ($request->getMethod() == 'POST'){
             if ($formData->isValid()){
                 $item = $formData->getData();
+                $item->setSalt(md5(time()));
+                $encoder = new MessageDigestPasswordEncoder('sha512', true, 10);
+                $password = $encoder->encodePassword($item->getPassword(), $item->getSalt());
+                $item->setPassword($password);
                 $em->persist($item);
                 $em->flush();
                 $em->refresh($item);
@@ -72,6 +77,10 @@ class UserController extends Controller{
         if ($request->getMethod() == 'POST'){
             if ($formData->isValid()){
                 $item = $formData->getData();
+                $item->setSalt(md5(time()));
+                $encoder = new MessageDigestPasswordEncoder('sha512', true, 10);
+                $password = $encoder->encodePassword($item->getPassword(), $item->getSalt());
+                $item->setPassword($password);
                 $em->flush($item);
                 $em->refresh($item);
                 return $this->redirect($this->generateUrl('user_list'));
