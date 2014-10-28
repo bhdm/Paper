@@ -25,11 +25,11 @@
                         <div class="btn-group btn-group-sm">
                             <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
                                 {% if item.status == 0 %}
-                                    Новый
+                                    <span class="text-success">Новый</span>
                                 {% elseif item.status == 1 %}
-                                    В производстве
+                                    <span class="text-danger">В производстве</span>
                                 {% elseif item.status == 2 %}
-                                    Сделан
+                                    <span class="text-primary">Сделан</span>
                                 {% endif %}
                                 <span class="caret"></span>
                             </button>

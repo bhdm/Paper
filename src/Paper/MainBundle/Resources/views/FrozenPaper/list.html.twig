@@ -26,7 +26,11 @@
                     <td>
                         <div class="btn-group btn-group-sm">
                             <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
-                                {{ item.status == 0 ? 'Резерв' : 'Потрачено' }}
+                                {% if item.status == 0 %}
+                                    <span class="text-success">Резерв</span>
+                                {% elseif item.status == 1 %}
+                                    <span class="text-danger">Потрачено</span>
+                                {% endif %}
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" role="menu">
