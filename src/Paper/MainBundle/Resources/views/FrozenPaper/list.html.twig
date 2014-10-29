@@ -8,6 +8,14 @@
                 <a href="{{ path('frozenPaper_add',{'orderId' : orderId}) }}">Добавить бумагу в заказ</a> <span class="divider"></span>
             </div>
         </ul>
+
+        {% if error == 1 %}
+            <div class="alert alert-warning" role="alert">Недостаточно бумаги</div>
+        {% endif %}
+        {% if error == 2 %}
+            <div class="alert alert-danger" role="alert">Недостаточно бумаги</div>
+        {% endif %}
+
         <table class="table">
             <tr>
                 <th>Бумага</th>

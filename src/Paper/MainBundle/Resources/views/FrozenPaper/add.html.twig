@@ -15,7 +15,7 @@
     {{ parent() }}
     <script>
         $(document).ready(function(){
-            $('#paper_mainbundle_frozenpaper_paper').change(function(){
+            $('#paper_mainbundle_frozenpaper_submit').click(function(){
 //                alert('1');
                 var paper = $(this);
                 $.ajax({
@@ -24,7 +24,9 @@
                     data: "paper="+paper.val(),
                     success: function(msg){
 //                        alert('2');
-                        $('#paper_mainbundle_frozenpaper_count').attr('max',msg);
+                        if (msg < paper.val()){
+                            alert('Нехватка бумаги на складе');
+                        }
                     }
                 });
             });

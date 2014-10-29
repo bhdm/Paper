@@ -19,10 +19,10 @@ class FrozenPaperController extends Controller{
         const ENTITY_NAME = 'FrozenPaper';
     /**
      * @Security("has_role('ROLE_USER')")
-     * @Route("/{orderId}", name="frozenPaper_list")
+     * @Route("/list/{orderId}/{error}", name="frozenPaper_list", defaults={"error" = "0"}, requirements = {"error" = "\d+"})
      * @Template()
      */
-    public function listAction($orderId){
+    public function listAction($orderId, $error = 0){
         $order = $this->getDoctrine()->getRepository('PaperMainBundle:Order')->findOneById($orderId);
         $items = $this->getDoctrine()->getRepository('PaperMainBundle:'.self::ENTITY_NAME)->findByOrder($order);
 
@@ -33,7 +33,7 @@ class FrozenPaperController extends Controller{
             20
         );
 
-        return array('pagination' => $pagination, 'orderId' => $orderId);
+        return array('pagination' => $pagination, 'orderId' => $orderId, 'error' => $error);
     }
 
     /**
@@ -102,6 +102,7 @@ class FrozenPaperController extends Controller{
      * @Route("/status/{id}/{status}", name="frozenPaper_status")
      */
     public function statusAction(Request $request, $id, $status){
+        $error = null;
         $em = $this->getDoctrine()->getManager();
         $item = $em->getRepository('PaperMainBundle:'.self::ENTITY_NAME)->findOneById($id);
         if ($item){
@@ -109,17 +110,38 @@ class FrozenPaperController extends Controller{
             if ($status == 0){
                 $paper = $item->getPaper();
                 $paper->setCount($paper->getCount() + $item->getCount());
+                $item->setStatus($status);
+                $em->flush();
             }
             # В резерв
-            if ($item->getStatus() == 0 && $status == 1){
+            if ($status == 1){
                 $paper = $item->getPaper();
-                $paper->setCount($paper->getCount() - $item->getCount());
+                if ($paper->getCount() - $item->getCount() >= 0){
+                    $item->setStatus($status);
+                    $em->flush();
+                }else{
+                    $item->setStatus($status);
+                    $em->flush();
+                    $error = 1;
+                }
             }
-            $item->setStatus($status);
-                $em->flush();
+
+            # В резерв
+            if ($item->getStatus() == 1 && $status == 2){
+                $paper = $item->getPaper();
+                if ($paper->getCount() - $item->getCount() >= 0){
+                    $paper->setCount($paper->getCount() - $item->getCount());
+                    $item->setStatus($status);
+                    $em->flush();
+                }else{
+                    $error = 2;
+                }
+            }
+
         }
 
-        return $this->redirect($request->headers->get('referer'));
+        $orderId = $item->getOrder()->getId();
+        return $this->redirect($this->generateUrl('frozenPaper_list', array('orderId' => $orderId, 'error' => $error)));
     }
 
 

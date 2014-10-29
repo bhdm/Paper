@@ -19,15 +19,21 @@ class FrozenPaper extends BaseEntity
      */
     protected $order;
 
+
     /**
      * @ORM\ManyToOne(targetEntity="Paper", inversedBy="orders")
      */
-    protected $paper;
+    protected $paper ;
 
     /**
      * @ORM\Column(type="integer")
      */
     protected $count = 0;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $frozen = 0;
 
     /**
      * @ORM\Column(type="integer")
@@ -160,6 +166,24 @@ class FrozenPaper extends BaseEntity
     {
         return $this->printer;
     }
+
+    /**
+     * @param mixed $frozen
+     */
+    public function setFrozen($frozen = 0)
+    {
+        $this->frozen = $frozen;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFrozen()
+    {
+        return $this->frozen;
+    }
+
+
 
 
 
