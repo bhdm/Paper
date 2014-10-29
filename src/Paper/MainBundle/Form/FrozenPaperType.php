@@ -35,15 +35,15 @@ class FrozenPaperType extends AbstractType
                 'label' => 'Тип печати',
                 'required'  => false,
             ))
-            ->add('status','choice',  array(
-                'empty_value' => false,
-                'choices' => array(
-                    '0' => 'Зарезервированно',
-                    '1' => 'Потрачено',
-                ),
-                'label' => 'Статус бумаги',
-                'required'  => false,
-            ))
+//            ->add('status','choice',  array(
+//                'empty_value' => false,
+//                'choices' => array(
+//                    '0' => 'Зарезервированно',
+//                    '1' => 'Потрачено',
+//                ),
+//                'label' => 'Статус бумаги',
+//                'required'  => false,
+//            ))
             ->add('submit', 'submit', array('label' => 'Сохранить'))
         ;
     }
