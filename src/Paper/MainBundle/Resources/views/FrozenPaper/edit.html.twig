@@ -10,3 +10,24 @@
         </form>
     </div>
 {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function(){
+            $('#paper_mainbundle_frozenpaper_paper').change(function(){
+                alert('1');
+                var paper = $(this);
+                $.ajax({
+                    type: "POST",
+                    url: "{{ path('paper_getcount') }}",
+                    data: "paper="+paper.val(),
+                    success: function(msg){
+                        alert('2');
+                        $('#paper_mainbundle_frozenpaper_count').attr('max',msg);
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}
