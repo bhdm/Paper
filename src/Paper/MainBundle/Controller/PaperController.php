@@ -32,7 +32,7 @@ class PaperController extends Controller{
             20
         );
 
-        return array('pagination' => $pagination);
+        return array('pagination' => $pagination, 'papers' => $items);
     }
 
     /**
@@ -96,24 +96,18 @@ class PaperController extends Controller{
 
     /**
      * @Security("has_role('ROLE_ADMIN')")
-     * @Route("/addCount/{id}", name="paper_addcount")
+     * @Route("/addCount", name="paper_addcount")
      */
-    public function addCountAction(Request $request, $id){
+    public function addCountAction(Request $request){
         $em = $this->getDoctrine()->getManager();
-        $item = new Paper();
-        $form = $this->createForm(new PaperType($em), $item);
-        $formData = $form->handleRequest($request);
-
         if ($request->getMethod() == 'POST'){
-            if ($formData->isValid()){
-                $item = $formData->getData();
-                $em->persist($item);
-                $em->flush();
-                $em->refresh($item);
-                return $this->redirect($this->generateUrl('paper_list'));
-            }
+            $id = $request->request->get('paperId');
+            $count = $request->request->get('paperCount');
+            $paper = $em->getRepository('PaperMainBundle:Paper')->findOneById($id);
+            $paper->setCount($paper->getCount()+$count);
+            $em->flush($paper);
         }
-        return array('form' => $form->createView());
+        return $this->redirect($request->headers->get('referer'));
     }
 
 }

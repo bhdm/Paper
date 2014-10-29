@@ -1,0 +1,121 @@
+{% extends "PaperMainBundle::layout.html.twig" %}
+
+{% block breadcrumb %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form method="POST">
+            <div class="row">
+                <div class='col-sm-3'>
+                    <div class="form-group">
+                        <div class='input-group date' id='datetimepicker1'>
+                            <input type='text' class="form-control" name="datetimepicker1" value="{{ starts | date ('d.m.Y')}}"/>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-sm-3'>
+                    <div class="form-group">
+                        <div class='input-group date' id='datetimepicker2'>
+                            <input type='text' class="form-control" name="datetimepicker2" value="{{ ends | date ('d.m.Y')}}"/>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-sm-3'>
+                    <button type="submit" class="btn btn-primary">Фильтр</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="well">
+        <div class="panel panel-default">
+            <div class="panel-heading"><span class="text-primary">Статистика по бумаге</span></div>
+             <table class="table">
+                <tr>
+                    <td>Черно-белая односторонняя</td>
+                    <td>{{ stats[1] }}</td>
+                </tr>
+                <tr>
+                    <td>Черно-белая двухсторонняя</td>
+                    <td>{{ stats[2] }}</td>
+                </tr>
+                <tr>
+                    <td>Цветная односторонняя</td>
+                    <td>{{ stats[3] }}</td>
+                </tr>
+                <tr>
+                    <td>Цветная двухсторонняя</td>
+                    <td>{{ stats[4] }}</td>
+                </tr>
+                <tr>
+                    <td>Всего ЧБ кликов</td>
+                    <td>{{ stats[5] }}</td>
+                </tr>
+                <tr>
+                    <td>Всего цветных кликов</td>
+                    <td>{{ stats[6] }}</td>
+                </tr>
+                <tr>
+                    <td>Всего односторонних</td>
+                    <td>{{ stats[7] }}</td>
+                </tr>
+                <tr>
+                    <td>Всего двухсторонних</td>
+                    <td>{{ stats[8] }}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading"><span class="text-primary">Статистика по заказам</span></div>
+            <table class="table">
+                <tr>
+                    <td>Всего заказов</td>
+                    <td>{{ order[1] }}</td>
+                </tr>
+                <tr>
+                    <td>Новых</td>
+                    <td>{{ order[2] }}</td>
+                </tr>
+                <tr>
+                    <td>В производсте</td>
+                    <td>{{ order[3] }}</td>
+                </tr>
+                <tr>
+                    <td>Сделанных</td>
+                    <td>{{ order[4] }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/papermain/js/moment.js') }}"></script>
+    <script src="{{ asset('bundles/papermain/js/bootstrap-datetimepicker.js') }}"></script>
+    <script src="{{ asset('bundles/papermain/js/ru.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $(function () {
+                $('#datetimepicker1').datetimepicker({
+                    language: 'ru',
+                    pickTime: false
+                });
+                $('#datetimepicker2').datetimepicker({
+                    language: 'ru',
+                    pickTime: false
+                });
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+    <link href="{{ asset('bundles/papermain/css/bootstrap-datetimepicker.css') }}" rel="stylesheet">
+{% endblock %}

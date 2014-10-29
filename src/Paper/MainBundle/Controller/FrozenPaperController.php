@@ -18,7 +18,7 @@ use Paper\MainBundle\Form\FrozenPaperType;
 class FrozenPaperController extends Controller{
         const ENTITY_NAME = 'FrozenPaper';
     /**
-     * @Security("has_role('ROLE_ADMIN')")
+     * @Security("has_role('ROLE_USER')")
      * @Route("/{orderId}", name="frozenPaper_list")
      * @Template()
      */
@@ -37,7 +37,7 @@ class FrozenPaperController extends Controller{
     }
 
     /**
-     * @Security("has_role('ROLE_ADMIN')")
+     * @Security("has_role('ROLE_USER')")
      * @Route("/add/{orderId}", name="frozenPaper_add")
      * @Template()
      */
@@ -61,7 +61,7 @@ class FrozenPaperController extends Controller{
     }
 
     /**
-     * @Security("has_role('ROLE_ADMIN')")
+     * @Security("has_role('ROLE_USER')")
      * @Route("/edit/{orderId}/{id}", name="frozenPaper_edit")
      * @Template()
      */

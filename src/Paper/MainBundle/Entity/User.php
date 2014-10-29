@@ -254,5 +254,11 @@ class User extends BaseEntity implements UserInterface
         return $this->orders;
     }
 
+    public function getUserRoles(){
+        return $this->roles[0];
+    }
 
+    public function setUserRoles($role){
+        $this->roles = $role;
+    }
 }

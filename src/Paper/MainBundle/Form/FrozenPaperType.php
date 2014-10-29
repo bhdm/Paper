@@ -20,8 +20,8 @@ class FrozenPaperType extends AbstractType
             ->add('color','choice',  array(
                 'empty_value' => false,
                 'choices' => array(
-                    '1' => 'Черно-белая',
-                    '0' => 'цветная',
+                    '0' => 'Черно-белая',
+                    '1' => 'цветная',
                 ),
                 'label' => 'Цветность печати',
                 'required'  => false,

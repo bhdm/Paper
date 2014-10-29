@@ -1,7 +1,8 @@
 {% extends "PaperMainBundle::layout.html.twig" %}
 
 {% block breadcrumb %}
-    <a href="{{ path('paper_add') }}"><span class="btn btn-primary">Добавить</span></a>
+    <a href="{{ path('paper_add') }}"><span class="btn btn-primary">Создать</span></a>
+    <span class="btn btn-warning" data-toggle="modal" data-target="#myModal">Добавить на склад</span>
     <br style="clear: both"/>
     <br style="clear: both"/>
 {% endblock %}
@@ -27,12 +28,6 @@
                     <td class="setting">
                         {% spaceless %}
                         {#<a href="{{ path('paper_addcount',{'id' : item.id}) }}"></a>#}
-
-                            <button type="button" class="btn btn-default btn-bg" data-toggle="modal-popover" data-placement="left" data-target="#popupBottom">
-                                <span class="glyphicon glyphicon-plus"></span>
-                            </button>
-                            &nbsp;
-                            &nbsp;
                         <a href="{{ path('paper_edit',{'id' : item.id}) }}">
                             <button type="button" class="btn btn-default btn-bg">
                                 <span class="glyphicon glyphicon-pencil"></span>
@@ -50,19 +45,42 @@
                 </tr>
             {% endfor%}
         </table>
-        <div id="popupBottom" class="popover">
-            <div class="arrow"></div>
-            <h3 class="popover-title">Добавление бумаги</h3>
-            <div class="popover-content">
-                <form>
-                    <input type="text" placeholder="Количество" class="form-control"><button class="btn btn-primary btn-sm">Добавить</button><button class="btn btn-danger btn-sm">Отмена</button>
-                </form>
-            </div>
-        </div>
         <div class="navigation">
             {{ knp_pagination_render(pagination) }}
         </div>
-    </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form method="POST" action="{{ path('paper_addcount') }}">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Добавление бумаги на склад</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="control-label" for="paper_mainbundle_paper_enabled">Выберите бумагу</label>
+                                <select id="paper_mainbundle_paper_enabled" name="paperId" class="form-control">
+                                    {% for paper in papers %}
+                                        <option value="{{ paper.id }}">{{ paper.title }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label required" for="paper_mainbundle_paper_count">Количество</label>
+                                <input type="number" name="paperCount" required="required" class="form-control" value="0">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                            <button type="submit" class="btn btn-primary">Добавить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
 {% endblock %}
 
 {% block javascripts %}
@@ -72,4 +90,14 @@
             $('#popupBottom').modalPopover()
         });
     </script>
+{% endblock %}
+
+{% block stylesheets %}
+        {{ parent() }}
+        <style>
+            .modal-dialog {
+                width: 600px;
+                margin: 200px auto;
+            }
+        </style>
 {% endblock %}

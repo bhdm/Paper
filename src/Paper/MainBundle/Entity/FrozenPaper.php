@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * таблица связывающая бумагу и заказ через себя
  *
  * @ORM\Table()
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="FrozenPaperRepository")
  */
 class FrozenPaper extends BaseEntity
 {
