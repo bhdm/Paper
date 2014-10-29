@@ -52,6 +52,8 @@ class FrozenPaperController extends Controller{
                 $item = $formData->getData();
                 $item->setOrder($order);
                 $em->persist($item);
+                $paper = $item->getPaper();
+                $paper->setFrozen($paper->getFrozen+ $item->getCount());
                 $em->flush();
                 $em->refresh($item);
                 return $this->redirect($this->generateUrl('frozenPaper_list',array('orderId'=>$orderId)));
