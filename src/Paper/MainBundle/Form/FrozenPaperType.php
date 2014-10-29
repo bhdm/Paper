@@ -16,6 +16,7 @@ class FrozenPaperType extends AbstractType
     {
         $builder
             ->add('paper',null,array('label' => 'Бумага'))
+            ->add('printer',null,array('label' => 'Принтер','required'  => true))
             ->add('count',null,array('label' => 'Количество'))
             ->add('color','choice',  array(
                 'empty_value' => false,

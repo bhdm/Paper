@@ -45,6 +45,11 @@ class FrozenPaper extends BaseEntity
     protected $typePrint = 1;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Printer", inversedBy="papers")
+     */
+    protected $printer;
+
+    /**
      * @param mixed $color
      */
     public function setColor($color)
@@ -139,6 +144,23 @@ class FrozenPaper extends BaseEntity
     {
         return $this->typePrint;
     }
+
+    /**
+     * @param mixed $printer
+     */
+    public function setPrinter($printer)
+    {
+        $this->printer = $printer;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrinter()
+    {
+        return $this->printer;
+    }
+
 
 
 }
