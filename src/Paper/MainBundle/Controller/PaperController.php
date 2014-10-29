@@ -5,6 +5,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\SecurityContext;
 use Symfony\Component\HttpFoundation\Request;
 use Paper\MainBundle\Entity\Paper;
@@ -108,6 +109,22 @@ class PaperController extends Controller{
             $em->flush($paper);
         }
         return $this->redirect($request->headers->get('referer'));
+    }
+
+    /**
+     * @Security("has_role('ROLE_USER')")
+     * @Route("/getcount", name="paper_getcount", options={"expose" = true })
+     */
+    public function getCountAction(Request $request){
+        if ($request->getMethod() == 'POST'){
+            $paperId = $request->request->get('paper');
+            $paper = $this->getDoctrine()->getRepository('PaperMainBundle:Paper')->findOneById($paperId);
+            $response =  new Response($paper->getCount());
+            return $response;
+        }else{
+            $response =  new Response('0');
+            return $response;
+        }
     }
 
 }
