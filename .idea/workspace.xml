@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/web/ammo.php" line="108" mnemonic="1" />
+    <bookmark url="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/FrozenPaperController.php" line="54" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca078380-153b-47cb-acb7-5448afb65390" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Paper/MainBundle/Controller/FrozenPaperController.php" afterPath="$PROJECT_DIR$/src/Paper/MainBundle/Controller/FrozenPaperController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="paper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,7 +31,7 @@
       <file leaf-file-name="FrozenPaper.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Entity/FrozenPaper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="7" selection-start="930" selection-end="930" vertical-scroll-proportion="-21.333334" vertical-offset="270" max-vertical-offset="3456">
+            <state line="49" column="7" selection-start="930" selection-end="930" vertical-scroll-proportion="-1.3333334" vertical-offset="810" max-vertical-offset="3456">
               <folding />
             </state>
           </provider>
@@ -41,7 +40,7 @@
       <file leaf-file-name="FrozenPaperController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/FrozenPaperController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="70" selection-start="2272" selection-end="2272" vertical-scroll-proportion="0.66129035" vertical-offset="372" max-vertical-offset="2952">
+            <state line="62" column="121" selection-start="2605" selection-end="2605" vertical-scroll-proportion="0.46179402" vertical-offset="573" max-vertical-offset="3024">
               <folding />
             </state>
           </provider>
@@ -50,7 +49,7 @@
       <file leaf-file-name="PaperController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/PaperController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="122" column="29" selection-start="4368" selection-end="4368" vertical-scroll-proportion="-29.88889" vertical-offset="1389" max-vertical-offset="2430">
+            <state line="122" column="29" selection-start="4368" selection-end="4368" vertical-scroll-proportion="-24.777779" vertical-offset="1527" max-vertical-offset="2430">
               <folding>
                 <element signature="e#46#103#0" expanded="true" />
               </folding>
@@ -464,7 +463,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.165625" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41666666" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21945827" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -749,15 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/PaperController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="29" selection-start="4368" selection-end="4368" vertical-scroll-proportion="-29.88889" vertical-offset="1389" max-vertical-offset="2430">
-          <folding>
-            <element signature="e#46#103#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Entity/Paper.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="96" column="41" selection-start="1633" selection-end="1633" vertical-scroll-proportion="-14.888889" vertical-offset="1290" max-vertical-offset="2070">
@@ -774,14 +764,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Entity/FrozenPaper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="7" selection-start="930" selection-end="930" vertical-scroll-proportion="-21.333334" vertical-offset="270" max-vertical-offset="3456">
+        <state line="49" column="7" selection-start="930" selection-end="930" vertical-scroll-proportion="-1.3333334" vertical-offset="810" max-vertical-offset="3456">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/PaperController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="29" selection-start="4368" selection-end="4368" vertical-scroll-proportion="-24.777779" vertical-offset="1527" max-vertical-offset="2430">
+          <folding>
+            <element signature="e#46#103#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/FrozenPaperController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="70" selection-start="2272" selection-end="2272" vertical-scroll-proportion="0.66129035" vertical-offset="372" max-vertical-offset="2952">
+        <state line="62" column="121" selection-start="2605" selection-end="2605" vertical-scroll-proportion="0.46179402" vertical-offset="573" max-vertical-offset="3024">
           <folding />
         </state>
       </provider>
