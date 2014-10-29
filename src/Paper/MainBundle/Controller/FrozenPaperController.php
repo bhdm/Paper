@@ -53,7 +53,7 @@ class FrozenPaperController extends Controller{
                 $item->setOrder($order);
                 $em->persist($item);
                 $paper = $item->getPaper();
-                $paper->setFrozen($paper->getFrozen+ $item->getCount());
+                $paper->setFrozen($paper->getFrozen() + $item->getCount());
                 $error = 0;
                 if ($paper->getCount() < $paper->getFrozen() ){
                     $error = 1;
