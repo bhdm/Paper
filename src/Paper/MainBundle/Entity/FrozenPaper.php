@@ -38,7 +38,7 @@ class FrozenPaper extends BaseEntity
     /**
      * @ORM\Column(type="integer")
      */
-    protected $status = 0;
+    protected $status = 1;
 
     /**
      * @ORM\Column(type="boolean")
@@ -122,7 +122,7 @@ class FrozenPaper extends BaseEntity
     /**
      * @param mixed $status
      */
-    public function setStatus($status)
+    public function setStatus($status = 1)
     {
         $this->status = $status;
     }
@@ -182,7 +182,6 @@ class FrozenPaper extends BaseEntity
     {
         return $this->frozen;
     }
-
 
 
 

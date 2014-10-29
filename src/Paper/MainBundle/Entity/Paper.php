@@ -30,6 +30,10 @@ class Paper extends BaseEntity
      */
     protected $orders;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $frozen = 0;
 
     public function __construct(){
         $this->orders = new ArrayCollection();
@@ -86,4 +90,22 @@ class Paper extends BaseEntity
     public function __toString(){
         return $this->title;
     }
+
+    /**
+     * @param mixed $frozen
+     */
+    public function setFrozen($frozen = 0)
+    {
+        $this->frozen = $frozen;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFrozen()
+    {
+        return $this->frozen;
+    }
+
+
 }

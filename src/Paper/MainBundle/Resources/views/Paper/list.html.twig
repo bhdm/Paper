@@ -15,6 +15,8 @@
                 <th>Название</th>
                 <th></th>
                 <th>Количество</th>
+                <th>Заморожено</th>
+                <th>Свободно</th>
                 <th>Статус</th>
                 <th class="setting">Инструменты</th>
             </tr>
@@ -23,7 +25,9 @@
                     <td>{{ item.id }}</td>
                     <td>{{ item.title }}</td>
                     <td></td>
-                    <td>{{ item.count }}</td>
+                    <td>{{ item.count}}</td>
+                    <td>{{ item.frozen }}</td>
+                    <td>{{ item.count - item.frozen}}</td>
                     <td>{{ item.enabledStr }}</td>
                     <td class="setting">
                         {% spaceless %}

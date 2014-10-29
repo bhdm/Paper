@@ -105,32 +105,48 @@ class FrozenPaperController extends Controller{
         $error = null;
         $em = $this->getDoctrine()->getManager();
         $item = $em->getRepository('PaperMainBundle:'.self::ENTITY_NAME)->findOneById($id);
+        $paper = $item->getPaper();
         if ($item){
             # В отменен
             if ($status == 0){
-                $paper = $item->getPaper();
-                $paper->setCount($paper->getCount() + $item->getCount());
+                if ($item->getStatus() == 1){
+                    $paper->setFrozen($paper->getFrozen() - $item->getCount());
+                }
+                if ($item->getStatus() == 2){
+                    $paper->setCount($paper->getCount() - $item->getCount());
+                }
                 $item->setStatus($status);
                 $em->flush();
             }
-            # В резерв
-            if ($status == 1){
-                $paper = $item->getPaper();
-                if ($paper->getCount() - $item->getCount() >= 0){
-                    $item->setStatus($status);
-                    $em->flush();
-                }else{
-                    $item->setStatus($status);
-                    $em->flush();
-                    $error = 1;
-                }
-            }
 
             # В резерв
-            if ($item->getStatus() == 1 && $status == 2){
-                $paper = $item->getPaper();
-                if ($paper->getCount() - $item->getCount() >= 0){
+            if ($status == 1){
+                if ($item->getStatus() == 0){
+                    $paper->setFrozen($paper->getFrozen() + $item->getCount());
+                }
+                if ($item->getStatus() == 2){
+                    $paper->setFrozen($paper->getFrozen() + $item->getCount());
+                    $paper->setCount($paper->getCount() + $item->getCount());
+                }
+
+                if ($paper->getCount() < $paper->getFrozen() ){
+                    $error = 1;
+                }
+
+                $item->setStatus($status);
+                $em->flush();
+            }
+
+            # В потрачено
+            if ($status == 2){
+                if ($item->getStatus() == 0){
                     $paper->setCount($paper->getCount() - $item->getCount());
+                }
+                if ($item->getStatus() == 1){
+                    $paper->setFrozen($paper->getFrozen() - $item->getCount());
+                    $paper->setCount($paper->getCount() - $item->getCount());
+                }
+                if ($paper->getCount() >= 0 ){
                     $item->setStatus($status);
                     $em->flush();
                 }else{

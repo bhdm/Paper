@@ -9,4 +9,20 @@ class OrderRepository extends EntityRepository
     {
         return $this->findBy(array(), array('created' => 'DESC'));
     }
+
+
+    public function hold($id)
+    {
+        $result= $this
+            ->createQueryBuilder('o')
+            ->select('SUM(f.count)')
+            ->leftJoin('o.papers','f')
+            ->where('o.id = '.$id)
+            ->andWhere('f.status = 1')
+            ->getQuery()
+            ->getResult();
+
+        return $result;
+    }
+
 }
