@@ -105,6 +105,12 @@ class FrozenPaperController extends Controller{
         $em = $this->getDoctrine()->getManager();
         $item = $em->getRepository('PaperMainBundle:'.self::ENTITY_NAME)->findOneById($id);
         if ($item){
+            # В отменен
+            if ($status = 0){
+                $paper = $item->getPaper();
+                $paper->setCount($paper->getCount() + $item->getCount());
+            }
+            # В резерв
             if ($item->getStatus() == 0 && $status = 1){
                 $paper = $item->getPaper();
                 $paper->setCount($paper->getCount() - $item->getCount());
