@@ -47,13 +47,15 @@
                                 <span class="glyphicon glyphicon-pencil"></span>
                             </button>
                         </a>
-                            &nbsp;
-                            &nbsp;
-                        <a href="{{ path('order_remove',{'id' : item.id}) }}">
-                            <button type="button" class="btn btn-default btn-bg">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </button>
-                        </a>
+                            {% if is_granted('ROLE_MANAGER') %}
+                                &nbsp;
+                                &nbsp;
+                            <a href="{{ path('order_remove',{'id' : item.id}) }}">
+                                <button type="button" class="btn btn-default btn-bg">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </button>
+                            </a>
+                        {% endif %}
                         {% endspaceless %}
                     </td>
                 </tr>

@@ -19,7 +19,7 @@ use Paper\MainBundle\Form\PaperType;
 class PaperController extends Controller{
         const ENTITY_NAME = 'Paper';
     /**
-     * @Security("has_role('ROLE_ADMIN')")
+     * @Security("has_role('ROLE_MANGER')")
      * @Route("/", name="paper_list")
      * @Template()
      */
@@ -96,7 +96,7 @@ class PaperController extends Controller{
     }
 
     /**
-     * @Security("has_role('ROLE_ADMIN')")
+     * @Security("has_role('ROLE_MANAGER')")
      * @Route("/addCount", name="paper_addcount")
      */
     public function addCountAction(Request $request){

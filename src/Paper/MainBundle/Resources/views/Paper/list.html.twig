@@ -30,21 +30,23 @@
                     <td>{{ item.count - item.frozen}}</td>
                     <td>{{ item.enabledStr }}</td>
                     <td class="setting">
-                        {% spaceless %}
-                        {#<a href="{{ path('paper_addcount',{'id' : item.id}) }}"></a>#}
-                        <a href="{{ path('paper_edit',{'id' : item.id}) }}">
-                            <button type="button" class="btn btn-default btn-bg">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                            </button>
-                        </a>
-                            &nbsp;
-                            &nbsp;
-                        <a href="{{ path('paper_remove',{'id' : item.id}) }}">
-                            <button type="button" class="btn btn-default btn-bg">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </button>
-                        </a>
-                        {% endspaceless %}
+                        {% if is_granted('ROLE_ADMIN') %}
+                            {% spaceless %}
+                            {#<a href="{{ path('paper_addcount',{'id' : item.id}) }}"></a>#}
+                            <a href="{{ path('paper_edit',{'id' : item.id}) }}">
+                                <button type="button" class="btn btn-default btn-bg">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
+                            </a>
+                                &nbsp;
+                                &nbsp;
+                            <a href="{{ path('paper_remove',{'id' : item.id}) }}">
+                                <button type="button" class="btn btn-default btn-bg">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </button>
+                            </a>
+                            {% endspaceless %}
+                        {% endif %}
                     </td>
                 </tr>
             {% endfor%}
