@@ -104,7 +104,7 @@ class FrozenPaperController extends Controller{
     }
 
     /**
-     * @Security("has_role('ROLE_PRESSMAN')")
+     * @Security("has_role('ROLE_USER')")
      * @Route("/status/{id}/{status}", name="frozenPaper_status")
      */
     public function statusAction(Request $request, $id, $status){
