@@ -19,7 +19,7 @@ use Paper\MainBundle\Form\PaperType;
 class PaperController extends Controller{
         const ENTITY_NAME = 'Paper';
     /**
-     * @Security("has_role('ROLE_MANGER')")
+     * @Security("has_role('ROLE_MANAGER')")
      * @Route("/", name="paper_list")
      * @Template()
      */
