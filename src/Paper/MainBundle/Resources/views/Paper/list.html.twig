@@ -2,7 +2,9 @@
 
 {% block breadcrumb %}
     <a href="{{ path('paper_add') }}"><span class="btn btn-primary">Создать</span></a>
-    <span class="btn btn-warning" data-toggle="modal" data-target="#myModal">Добавить на склад</span>
+    {% if is_granted('ROLE_PRESSMAN') %}
+        <span class="btn btn-warning" data-toggle="modal" data-target="#myModal">Добавить на склад</span>
+    {% endif %}
     <br style="clear: both"/>
     <br style="clear: both"/>
 {% endblock %}

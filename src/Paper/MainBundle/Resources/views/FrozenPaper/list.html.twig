@@ -3,13 +3,11 @@
 
 {% block content %}
     <div class="container">
-        {% if is_granted('ROLE_PRESSMAN') %}
         <ul class="breadcrumb">
             <div style="float: right">
                 <a href="{{ path('frozenPaper_add',{'orderId' : orderId}) }}">Добавить бумагу в заказ</a> <span class="divider"></span>
             </div>
         </ul>
-        {% endif %}
 
         {% if error == 1 %}
             <div class="alert alert-warning" role="alert">Недостаточно бумаги</div>
