@@ -46,7 +46,9 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ path('frozenPaper_status',{'id' : item.id, 'status' : 0}) }}">Неактивен</a></li>
                                 <li><a href="{{ path('frozenPaper_status',{'id' : item.id, 'status' : 1}) }}">Резерв</a></li>
-                                <li><a href="{{ path('frozenPaper_status',{'id' : item.id, 'status' : 2}) }}">Потрачено</a></li>
+                                {% if is_granted('ROLE_PRESSMAN') %}
+                                    <li><a href="{{ path('frozenPaper_status',{'id' : item.id, 'status' : 2}) }}">Потрачено</a></li>
+                                {% endif %}
                             </ul>
                         </div>
                     </td>
