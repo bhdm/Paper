@@ -41,7 +41,7 @@
       <file leaf-file-name="PaperController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/PaperController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="37" selection-start="726" selection-end="726" vertical-scroll-proportion="0.46520874" vertical-offset="0" max-vertical-offset="2286">
+            <state line="39" column="40" selection-start="1264" selection-end="1264" vertical-scroll-proportion="-0.39363816" vertical-offset="756" max-vertical-offset="2286">
               <folding />
             </state>
           </provider>
@@ -724,7 +724,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Paper/MainBundle/Controller/PaperController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="37" selection-start="726" selection-end="726" vertical-scroll-proportion="0.46520874" vertical-offset="0" max-vertical-offset="2286">
+        <state line="39" column="40" selection-start="1264" selection-end="1264" vertical-scroll-proportion="-0.39363816" vertical-offset="756" max-vertical-offset="2286">
           <folding />
         </state>
       </provider>
