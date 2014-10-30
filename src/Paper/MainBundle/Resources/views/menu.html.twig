@@ -7,7 +7,7 @@
                 Заказы
             </a>
         </li>
-        {% if is_granted('ROLE_MANAGER') %}
+        {% if is_granted('ROLE_USER') %}
         <li class="">
             <a href="{{ path('paper_list') }}">
                 <i class="glyphicon glyphicon-list-alt"></i>
