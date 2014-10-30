@@ -47,7 +47,7 @@
                                 <span class="glyphicon glyphicon-pencil"></span>
                             </button>
                         </a>
-                            {% if is_granted('ROLE_MANAGER') %}
+                            {% if is_granted('ROLE_ADMIN') %}
                                 &nbsp;
                                 &nbsp;
                             <a href="{{ path('order_remove',{'id' : item.id}) }}">
