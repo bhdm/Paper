@@ -99,7 +99,7 @@ class OrderController extends Controller{
                     $paper->setFrozen($paper->getFrozen() - $frozen->getCount());
                 }
                 if ($item->getStatus() == 2){
-                    $paper->setCount($paper->getCount() - $frozen->getCount());
+                    $paper->setCount($paper->getCount() + $frozen->getCount());
                 }
                 $frozen->setStatus(0);
                 $em->remove($frozen);
