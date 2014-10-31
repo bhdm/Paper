@@ -102,6 +102,7 @@ class OrderController extends Controller{
                     $paper->setCount($paper->getCount() - $frozen->getCount());
                 }
                 $frozen->setStatus(0);
+                $em->remove($frozen);
                 $em->flush();
             }
 
