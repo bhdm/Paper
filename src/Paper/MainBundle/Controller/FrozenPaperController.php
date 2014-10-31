@@ -103,7 +103,7 @@ class FrozenPaperController extends Controller{
                 $paper->setFrozen($paper->getFrozen() - $item->getCount());
             }
             if ($item->getStatus() == 2){
-                $paper->setCount($paper->getCount() - $item->getCount());
+                $paper->setCount($paper->getCount() + $item->getCount());
             }
             $item->setStatus(0);
 
