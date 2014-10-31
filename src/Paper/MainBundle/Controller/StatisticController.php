@@ -58,12 +58,13 @@ class StatisticController extends Controller{
         );
 
         foreach ($frozens as $item){
-            if (!isset($f[$item->getPrinter()->getTitle()])) $f[$item->getPrinter()->getTitle()] = array('0' => 0, '1' => 0);
-            if ($item->getTypePrint() == 4){ $f[$item->getPrinter()->getTitle()]['0'] += $item->getCount(); }
-            if ($item->getTypePrint() == 3){ $f[$item->getPrinter()->getTitle()]['0'] += $item->getCount()*2; }
-            if ($item->getTypePrint() == 2) { $f[$item->getPrinter()->getTitle()]['1'] += $item->getCount(); }
-            if ($item->getTypePrint() == 1) { $f[$item->getPrinter()->getTitle()]['1'] += $item->getCount()*2; }
-
+            if ($item->getStatus() == 2){
+                if (!isset($f[$item->getPrinter()->getTitle()])) $f[$item->getPrinter()->getTitle()] = array('0' => 0, '1' => 0);
+                if ($item->getTypePrint() == 4){ $f[$item->getPrinter()->getTitle()]['0'] += $item->getCount(); }
+                if ($item->getTypePrint() == 3){ $f[$item->getPrinter()->getTitle()]['0'] += $item->getCount()*2; }
+                if ($item->getTypePrint() == 2) { $f[$item->getPrinter()->getTitle()]['1'] += $item->getCount(); }
+                if ($item->getTypePrint() == 1) { $f[$item->getPrinter()->getTitle()]['1'] += $item->getCount()*2; }
+            }
         }
 
 
