@@ -88,7 +88,22 @@ class OrderController extends Controller{
     public function removeAction(Request $request, $id){
         $em = $this->getDoctrine()->getManager();
         $item = $em->getRepository('PaperMainBundle:'.self::ENTITY_NAME)->findOneById($id);
+
         if ($item){
+
+            foreach ( $item->getPapers() as $frozen){
+                $paper = $frozen->getPaper();
+
+                if ($frozen->getStatus() == 1){
+                    $paper->setFrozen($paper->getFrozen() - $frozen->getCount());
+                }
+                if ($item->getStatus() == 2){
+                    $paper->setCount($paper->getCount() - $frozen->getCount());
+                }
+                $frozen->setStatus(0);
+                $em->flush();
+            }
+
             $em->remove($item);
             $em->flush();
         }

@@ -38,11 +38,13 @@
                                 {% endif %}
                                 <span class="caret"></span>
                             </button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ path('paper_status',{'id' : item.id, 'status' : 0}) }}">Новый</a></li>
-                                <li><a href="{{ path('paper_status',{'id' : item.id, 'status' : 1}) }}">В производстве</a></li>
-                                <li><a href="{{ path('paper_status',{'id' : item.id, 'status' : 2}) }}">Сделан</a></li>
-                            </ul>
+                            {% if is_granted('ROLE_PRESSMAN') %}
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ path('paper_status',{'id' : item.id, 'status' : 0}) }}">Новый</a></li>
+                                    <li><a href="{{ path('paper_status',{'id' : item.id, 'status' : 1}) }}">В производстве</a></li>
+                                    <li><a href="{{ path('paper_status',{'id' : item.id, 'status' : 2}) }}">Сделан</a></li>
+                                </ul>
+                            {% endif %}
                         </div>
                     </td>
                     <td class="setting">
