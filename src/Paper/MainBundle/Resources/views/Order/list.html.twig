@@ -8,6 +8,11 @@
 
 {% block content %}
     <div class="well">
+
+        {% if error == 1 %}
+            <div class="alert alert-danger" role="alert">Не вся бумага потрачена</div>
+        {% endif %}
+
         <table class="table">
             <tr>
                 <th>Дата</th>

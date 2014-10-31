@@ -104,6 +104,15 @@ class Order extends BaseEntity
         return $this->status;
     }
 
+    public function isAllHold(){
+        $papers = $this->papers;
+        foreach ($papers as $paper){
+            if ( $paper->getStatus() != 2 ){
+                return false;
+            }
+        }
+        return true;
+    }
 
 
 }
