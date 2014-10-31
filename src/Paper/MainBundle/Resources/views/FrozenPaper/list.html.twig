@@ -21,9 +21,8 @@
         <table class="table">
             <tr>
                 <th>Бумага</th>
-                <th>Количество</th>
-                <th>Цветность</th>
-                <th>Кол-во сторон</th>
+                <th>Кол-во</th>
+                <th>Тип печати</th>
                 <th>Статус</th>
                 <th class="setting">Инструменты</th>
             </tr>
@@ -31,8 +30,18 @@
                 <tr>
                     <td>{{ item.paper.title }}</td>
                     <td>{{ item.count }}</td>
-                    <td>{{ item.color == true ? 'Цветная'  : 'ЧБ' }}</td>
-                    <td>{{ item.typePrint == 1 ? '1'  : '2' }}</td>
+
+                    <td>
+                        {% if item.typePrint == 1 %}
+                            4+4
+                        {% elseif item.typePrint == 2 %}
+                            4+0
+                        {% elseif item.typePrint == 3 %}
+                            1+1
+                        {% elseif item.typePrint == 4 %}
+                            1+0
+                        {% endif %}
+                    </td>
                     <td>
                         <div class="btn-group btn-group-sm">
                             <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">

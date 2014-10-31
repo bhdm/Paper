@@ -18,20 +18,13 @@ class FrozenPaperType extends AbstractType
             ->add('paper',null,array('label' => 'Бумага'))
             ->add('printer',null,array('label' => 'Принтер','required'  => true))
             ->add('count',null,array('label' => 'Количество'))
-            ->add('color','choice',  array(
-                'empty_value' => false,
-                'choices' => array(
-                    '0' => 'Черно-белая',
-                    '1' => 'цветная',
-                ),
-                'label' => 'Цветность печати',
-                'required'  => false,
-            ))
             ->add('typePrint','choice',  array(
                 'empty_value' => false,
                 'choices' => array(
-                    '1' => 'Одностороння',
-                    '2' => 'Двусторонняя',
+                    '1' => 'Цвет 2 стороны',
+                    '2' => 'Цвет 1 сторона',
+                    '3' => 'ЧБ 2 сторона',
+                    '4' => 'ЧБ 1 сторона',
                 ),
                 'label' => 'Тип печати',
                 'required'  => false,

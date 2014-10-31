@@ -41,11 +41,6 @@ class FrozenPaper extends BaseEntity
     protected $status = 1;
 
     /**
-     * @ORM\Column(type="boolean")
-     */
-    protected $color = false;
-
-    /**
      * @ORM\Column(type="integer")
      */
     protected $typePrint = 1;
@@ -55,21 +50,6 @@ class FrozenPaper extends BaseEntity
      */
     protected $printer;
 
-    /**
-     * @param mixed $color
-     */
-    public function setColor($color)
-    {
-        $this->color = $color;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getColor()
-    {
-        return $this->color;
-    }
 
     /**
      * @param mixed $count
