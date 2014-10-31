@@ -21,10 +21,10 @@ class FrozenPaperType extends AbstractType
             ->add('typePrint','choice',  array(
                 'empty_value' => false,
                 'choices' => array(
-                    '1' => 'Цвет 2 стороны',
-                    '2' => 'Цвет 1 сторона',
-                    '3' => 'ЧБ 2 сторона',
-                    '4' => 'ЧБ 1 сторона',
+                    '1' => '4+4',
+                    '2' => '4+0',
+                    '3' => '1+1',
+                    '4' => '1+0',
                 ),
                 'label' => 'Тип печати',
                 'required'  => false,
