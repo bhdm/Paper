@@ -20,7 +20,7 @@ class OrderController extends Controller{
         const ENTITY_NAME = 'Order';
     /**
      * @Security("has_role('ROLE_USER')")
-     * @Route("/{error}", name="order_list", defaults={"error" = "0"})
+     * @Route("/{error}", name="order_list", defaults={"error" = "0"}, requirements = {"error" = "\d+"})
      * @Template()
      */
     public function listAction($error = 0){
@@ -50,6 +50,7 @@ class OrderController extends Controller{
         if ($request->getMethod() == 'POST'){
             if ($formData->isValid()){
                 $item = $formData->getData();
+                $item->setUser($this->getUser());
                 $em->persist($item);
                 $em->flush();
                 $em->refresh($item);

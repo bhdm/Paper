@@ -13,7 +13,7 @@
         {#<iframe src="{{ path('admin_file_list') }}" class="frame"></iframe>#}
     {#</div>#}
     <div class="well">
-        {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_MANAGER') %}
+        {% if item.user == app.user or is_granted('ROLE_ADMIN') %}
             <form method="POST">
                 {{ form_widget(form) }}
             </form>

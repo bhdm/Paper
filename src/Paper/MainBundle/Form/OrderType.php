@@ -16,25 +16,25 @@ class OrderType extends AbstractType
     {
         $builder
             ->add('title', null, array('label' => 'Название заказа'))
-            ->add('enabled','choice',  array(
-                'empty_value' => false,
-                'choices' => array(
-                    '1' => 'Активен',
-                    '0' => 'Заблокирован',
-                ),
-                'label' => 'Активность',
-                'required'  => false,
-            ))
-            ->add('status','choice',  array(
-                'empty_value' => false,
-                'choices' => array(
-                    '0' => 'Новый',
-                    '1' => 'В производстве',
-                    '2' => 'Сделан',
-                ),
-                'label' => 'Активность',
-                'required'  => false,
-            ))
+//            ->add('enabled','choice',  array(
+//                'empty_value' => false,
+//                'choices' => array(
+//                    '1' => 'Активен',
+//                    '0' => 'Заблокирован',
+//                ),
+//                'label' => 'Активность',
+//                'required'  => false,
+//            ))
+//            ->add('status','choice',  array(
+//                'empty_value' => false,
+//                'choices' => array(
+//                    '0' => 'Новый',
+//                    '1' => 'В производстве',
+//                    '2' => 'Сделан',
+//                ),
+//                'label' => 'Активность',
+//                'required'  => false,
+//            ))
             ->add('submit', 'submit', array('label' => 'Сохранить'))
         ;
     }

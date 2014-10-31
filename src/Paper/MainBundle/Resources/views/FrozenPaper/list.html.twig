@@ -3,11 +3,13 @@
 
 {% block content %}
     <div class="container">
-        <ul class="breadcrumb">
-            <div style="float: right">
-                <a href="{{ path('frozenPaper_add',{'orderId' : orderId}) }}">Добавить бумагу в заказ</a> <span class="divider"></span>
-            </div>
-        </ul>
+        {% if order.user == app.user or is_granted('ROLE_PRESSMAN') %}
+            <ul class="breadcrumb">
+                <div style="float: right">
+                    <a href="{{ path('frozenPaper_add',{'orderId' : orderId}) }}">Добавить бумагу в заказ</a> <span class="divider"></span>
+                </div>
+            </ul>
+        {% endif %}
 
         {% if error == 1 %}
             <div class="alert alert-warning" role="alert">Недостаточно бумаги</div>
@@ -43,30 +45,34 @@
                                 {% endif %}
                                 <span class="caret"></span>
                             </button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ path('frozenPaper_status',{'id' : item.id, 'status' : 0}) }}">Неактивен</a></li>
-                                <li><a href="{{ path('frozenPaper_status',{'id' : item.id, 'status' : 1}) }}">Резерв</a></li>
-                                {% if is_granted('ROLE_PRESSMAN') %}
-                                    <li><a href="{{ path('frozenPaper_status',{'id' : item.id, 'status' : 2}) }}">Потрачено</a></li>
-                                {% endif %}
-                            </ul>
+                            {% if order.user == app.user or is_granted('ROLE_PRESSMAN') %}
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ path('frozenPaper_status',{'id' : item.id, 'status' : 0}) }}">Неактивен</a></li>
+                                    <li><a href="{{ path('frozenPaper_status',{'id' : item.id, 'status' : 1}) }}">Резерв</a></li>
+                                    {% if is_granted('ROLE_PRESSMAN') %}
+                                        <li><a href="{{ path('frozenPaper_status',{'id' : item.id, 'status' : 2}) }}">Потрачено</a></li>
+                                    {% endif %}
+                                </ul>
+                            {% endif %}
                         </div>
                     </td>
                     <td class="setting">
-                        {% spaceless %}
-                            <a href="{{ path('frozenPaper_edit',{'orderId' : orderId, 'id' : item.id }) }}">
-                                <button type="button" class="btn btn-default btn-bg">
-                                    <span class="glyphicon glyphicon-pencil"></span>
-                                </button>
-                            </a>
-                            &nbsp;
-                            &nbsp;
-                            <a href="{{ path('frozenPaper_remove',{'id' : item.id}) }}">
-                                <button type="button" class="btn btn-default btn-bg">
-                                    <span class="glyphicon glyphicon-remove"></span>
-                                </button>
-                            </a>
-                        {% endspaceless %}
+                        {% if order.user == app.user or is_granted('ROLE_PRESSMAN') %}
+                            {% spaceless %}
+                                <a href="{{ path('frozenPaper_edit',{'orderId' : orderId, 'id' : item.id }) }}">
+                                    <button type="button" class="btn btn-default btn-bg">
+                                        <span class="glyphicon glyphicon-pencil"></span>
+                                    </button>
+                                </a>
+                                &nbsp;
+                                &nbsp;
+                                <a href="{{ path('frozenPaper_remove',{'id' : item.id}) }}">
+                                    <button type="button" class="btn btn-default btn-bg">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </button>
+                                </a>
+                            {% endspaceless %}
+                        {% endif %}
                     </td>
                 </tr>
             {% endfor%}

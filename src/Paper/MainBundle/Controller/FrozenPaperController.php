@@ -33,7 +33,7 @@ class FrozenPaperController extends Controller{
             20
         );
 
-        return array('pagination' => $pagination, 'orderId' => $orderId, 'error' => $error);
+        return array('pagination' => $pagination, 'orderId' => $orderId, 'error' => $error, 'order' => $order);
     }
 
     /**
