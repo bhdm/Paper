@@ -16,34 +16,28 @@ class FrozenPaperType extends AbstractType
     {
         $builder
             ->add('paper',null,array('label' => 'Бумага'))
+            ->add('printer',null,array('label' => 'Принтер','required'  => true))
             ->add('count',null,array('label' => 'Количество'))
-            ->add('color','choice',  array(
-                'empty_value' => false,
-                'choices' => array(
-                    '0' => 'Черно-белая',
-                    '1' => 'цветная',
-                ),
-                'label' => 'Цветность печати',
-                'required'  => false,
-            ))
             ->add('typePrint','choice',  array(
                 'empty_value' => false,
                 'choices' => array(
-                    '1' => 'Одностороння',
-                    '2' => 'Двусторонняя',
+                    '1' => '4+4',
+                    '2' => '4+0',
+                    '3' => '1+1',
+                    '4' => '1+0',
                 ),
                 'label' => 'Тип печати',
                 'required'  => false,
             ))
-            ->add('status','choice',  array(
-                'empty_value' => false,
-                'choices' => array(
-                    '0' => 'Зарезервированно',
-                    '1' => 'Потрачено',
-                ),
-                'label' => 'Статус бумаги',
-                'required'  => false,
-            ))
+//            ->add('status','choice',  array(
+//                'empty_value' => false,
+//                'choices' => array(
+//                    '0' => 'Зарезервированно',
+//                    '1' => 'Потрачено',
+//                ),
+//                'label' => 'Статус бумаги',
+//                'required'  => false,
+//            ))
             ->add('submit', 'submit', array('label' => 'Сохранить'))
         ;
     }

@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\Security\Core\SecurityContext;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * Class UserController
@@ -20,30 +21,35 @@ class StatisticController extends Controller{
      * @Route("/", name="statistic_list")
      * @Template()
      */
-    public function indexAction(){
-        $frozens = $this->getDoctrine()->getRepository('PaperMainBundle:FrozenPaper')->findByEnabled(true);
+    public function indexAction(Request $request){
+
+        if ($request->getMethod() == 'POST'){
+            $starts  = $request->request->get('datetimepicker1');
+            $ends    = $request->request->get('datetimepicker2');
+        }else{
+            $starts = 'now';
+            $ends = 'now';
+        }
+
+
+        $ends = new \DateTime($ends);
+        if ($starts == 'now'){
+            $starts = new \DateTime($starts);
+            $starts->modify('-1 month');
+        }else{
+            $starts = new \DateTime($starts);
+        }
+
+
+        $frozens = $this->getDoctrine()->getRepository('PaperMainBundle:FrozenPaper')->filter($starts,$ends);
         $orders = $this->getDoctrine()->getRepository('PaperMainBundle:Order')->findByEnabled(true);
 
         /**
-         * 1 ЧБ односторонняя
-         * 2 ЧБ двухсторонняя
-         * 3 цветная односторонняя
-         * 4 цветная двухсторонняя
-         * 5 Всего ЧБ кликов
-         * 6 Всего цветных кликов
-         * 7 Всего односторонних
-         * 8 Всего двухсторонних
+         * 0 Всего ЧБ кликов
+         * 1 Всего цветных кликов
          */
-        $f = array(
-            '1' => 0,
-            '2' => 0,
-            '3' => 0,
-            '4' => 0,
-            '5' => 0,
-            '6' => 0,
-            '7' => 0,
-            '8' => 0,
-        );
+        $f = array();
+
         $order = array(
             '1' => count($this->getDoctrine()->getRepository('PaperMainBundle:Order')->findByEnabled(true)),
             '2' => count($this->getDoctrine()->getRepository('PaperMainBundle:Order')->findBy(array('enabled'=>true, 'status' => 0))),
@@ -52,14 +58,23 @@ class StatisticController extends Controller{
         );
 
         foreach ($frozens as $item){
-            if ($item->getColor() == false && $item->getTypePrint() == 1){ $f['1'] += $item->getCount(); $f['7'] += $item->getCount(); $f['5'] += $item->getCount(); }
-            if ($item->getColor() == false && $item->getTypePrint() == 2){ $f['2'] += $item->getCount(); $f['8'] += $item->getCount(); $f['5'] += $item->getCount()*2; }
-            if ($item->getColor() == true && $item->getTypePrint() == 1) { $f['3'] += $item->getCount(); $f['7'] += $item->getCount(); $f['6'] += $item->getCount(); }
-            if ($item->getColor() == true && $item->getTypePrint() == 2) { $f['4'] += $item->getCount(); $f['8'] += $item->getCount(); $f['6'] += $item->getCount()*2; }
-
+            if ($item->getStatus() == 2){
+                if (!isset($f[$item->getPrinter()->getTitle()])) $f[$item->getPrinter()->getTitle()] = array('0' => 0, '1' => 0);
+                if ($item->getTypePrint() == 4){ $f[$item->getPrinter()->getTitle()]['0'] += $item->getCount(); }
+                if ($item->getTypePrint() == 3){ $f[$item->getPrinter()->getTitle()]['0'] += $item->getCount()*2; }
+                if ($item->getTypePrint() == 2) { $f[$item->getPrinter()->getTitle()]['1'] += $item->getCount(); }
+                if ($item->getTypePrint() == 1) { $f[$item->getPrinter()->getTitle()]['1'] += $item->getCount()*2; }
+            }
         }
 
 
-        return array('forzens' => $frozens, 'stats' => $f, 'orders' => $orders,'order' => $order);
+        return array(
+            'forzens' => $frozens,
+            'stats' => $f,
+            'orders' => $orders,
+            'order' => $order,
+            'starts' => $starts,
+            'ends' => $ends,
+        );
     }
 }

@@ -10,3 +10,26 @@
         </form>
     </div>
 {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function(){
+            $('#paper_mainbundle_frozenpaper_submit').click(function(){
+//                alert('1');
+                var paper = $(this);
+                $.ajax({
+                    type: "POST",
+                    url: "{{ path('paper_getcount') }}",
+                    data: "paper="+paper.val(),
+                    success: function(msg){
+//                        alert('2');
+                        if (msg < paper.val()){
+                            alert('Нехватка бумаги на складе');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}

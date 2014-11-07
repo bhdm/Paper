@@ -5,6 +5,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\SecurityContext;
 use Symfony\Component\HttpFoundation\Request;
 use Paper\MainBundle\Entity\Paper;
@@ -18,7 +19,7 @@ use Paper\MainBundle\Form\PaperType;
 class PaperController extends Controller{
         const ENTITY_NAME = 'Paper';
     /**
-     * @Security("has_role('ROLE_ADMIN')")
+     * @Security("has_role('ROLE_USER')")
      * @Route("/", name="paper_list")
      * @Template()
      */
@@ -36,7 +37,7 @@ class PaperController extends Controller{
     }
 
     /**
-     * @Security("has_role('ROLE_ADMIN')")
+     * @Security("has_role('ROLE_USER')")
      * @Route("/add", name="paper_add")
      * @Template()
      */
@@ -59,7 +60,7 @@ class PaperController extends Controller{
     }
 
     /**
-     * @Security("has_role('ROLE_ADMIN')")
+     * @Security("has_role('ROLE_PRESSMAN')")
      * @Route("/edit/{id}", name="paper_edit")
      * @Template()
      */
@@ -95,7 +96,7 @@ class PaperController extends Controller{
     }
 
     /**
-     * @Security("has_role('ROLE_ADMIN')")
+     * @Security("has_role('ROLE_PRESSMAN')")
      * @Route("/addCount", name="paper_addcount")
      */
     public function addCountAction(Request $request){
@@ -108,6 +109,22 @@ class PaperController extends Controller{
             $em->flush($paper);
         }
         return $this->redirect($request->headers->get('referer'));
+    }
+
+    /**
+     * @Security("has_role('ROLE_USER')")
+     * @Route("/getcount", name="paper_getcount", options={"expose" = true })
+     */
+    public function getCountAction(Request $request){
+        if ($request->getMethod() == 'POST'){
+            $paperId = $request->request->get('paper');
+            $paper = $this->getDoctrine()->getRepository('PaperMainBundle:Paper')->findOneById($paperId);
+            $response =  new Response($paper->getCount());
+            return $response;
+        }else{
+            $response =  new Response('0');
+            return $response;
+        }
     }
 
 }

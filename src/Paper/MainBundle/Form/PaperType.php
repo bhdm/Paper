@@ -16,7 +16,7 @@ class PaperType extends AbstractType
     {
         $builder
             ->add('title',null, array('label' => 'Название бумаги'))
-            ->add('count',null, array('label' => 'Количество'))
+//            ->add('count',null, array('label' => 'Количество'))
             ->add('enabled','choice',  array(
                 'empty_value' => false,
                 'choices' => array(

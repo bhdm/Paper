@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * таблица связывающая бумагу и заказ через себя
  *
  * @ORM\Table()
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="FrozenPaperRepository")
  */
 class FrozenPaper extends BaseEntity
 {
@@ -19,10 +19,11 @@ class FrozenPaper extends BaseEntity
      */
     protected $order;
 
+
     /**
      * @ORM\ManyToOne(targetEntity="Paper", inversedBy="orders")
      */
-    protected $paper;
+    protected $paper ;
 
     /**
      * @ORM\Column(type="integer")
@@ -32,12 +33,12 @@ class FrozenPaper extends BaseEntity
     /**
      * @ORM\Column(type="integer")
      */
-    protected $status = 0;
+    protected $frozen = 0;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="integer")
      */
-    protected $color = false;
+    protected $status = 1;
 
     /**
      * @ORM\Column(type="integer")
@@ -45,20 +46,10 @@ class FrozenPaper extends BaseEntity
     protected $typePrint = 1;
 
     /**
-     * @param mixed $color
+     * @ORM\ManyToOne(targetEntity="Printer", inversedBy="papers")
      */
-    public function setColor($color)
-    {
-        $this->color = $color;
-    }
+    protected $printer;
 
-    /**
-     * @return mixed
-     */
-    public function getColor()
-    {
-        return $this->color;
-    }
 
     /**
      * @param mixed $count
@@ -111,7 +102,7 @@ class FrozenPaper extends BaseEntity
     /**
      * @param mixed $status
      */
-    public function setStatus($status)
+    public function setStatus($status = 1)
     {
         $this->status = $status;
     }
@@ -139,6 +130,40 @@ class FrozenPaper extends BaseEntity
     {
         return $this->typePrint;
     }
+
+    /**
+     * @param mixed $printer
+     */
+    public function setPrinter($printer)
+    {
+        $this->printer = $printer;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrinter()
+    {
+        return $this->printer;
+    }
+
+    /**
+     * @param mixed $frozen
+     */
+    public function setFrozen($frozen = 0)
+    {
+        $this->frozen = $frozen;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFrozen()
+    {
+        return $this->frozen;
+    }
+
+
 
 
 }

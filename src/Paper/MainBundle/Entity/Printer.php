@@ -23,14 +23,16 @@ class Printer extends BaseEntity
     /**
      * @ORM\OneToMany(targetEntity="FrozenPaper", mappedBy="printer")
      */
-    protected $orders;
+    protected $papers;
 
 
     public function __construct(){
-        $this->orders = new ArrayCollection();
-        $this->orders = new ArrayCollection();
+        $this->papers = new ArrayCollection();
     }
 
+    public function __toString(){
+        return $this->title;
+    }
     /**
      * @param mixed $title
      */
@@ -48,20 +50,21 @@ class Printer extends BaseEntity
     }
 
     /**
-     * @param mixed $orders
+     * @param mixed $papers
      */
-    public function setOrders($orders)
+    public function setPapers($papers)
     {
-        $this->orders = $orders;
+        $this->papers = $papers;
     }
 
     /**
      * @return mixed
      */
-    public function getOrders()
+    public function getPapers()
     {
-        return $this->orders;
+        return $this->papers;
     }
+
 
 
 }

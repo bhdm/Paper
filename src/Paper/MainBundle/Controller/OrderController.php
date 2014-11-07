@@ -20,10 +20,10 @@ class OrderController extends Controller{
         const ENTITY_NAME = 'Order';
     /**
      * @Security("has_role('ROLE_USER')")
-     * @Route("/", name="order_list")
+     * @Route("/{error}", name="order_list", defaults={"error" = "0"}, requirements = {"error" = "\d+"})
      * @Template()
      */
-    public function listAction(){
+    public function listAction($error = 0){
         $items = $this->getDoctrine()->getRepository('PaperMainBundle:'.self::ENTITY_NAME)->findAll();
 
         $paginator  = $this->get('knp_paginator');
@@ -33,7 +33,7 @@ class OrderController extends Controller{
             20
         );
 
-        return array('pagination' => $pagination);
+        return array('pagination' => $pagination, 'error' => $error);
     }
 
     /**
@@ -50,6 +50,7 @@ class OrderController extends Controller{
         if ($request->getMethod() == 'POST'){
             if ($formData->isValid()){
                 $item = $formData->getData();
+                $item->setUser($this->getUser());
                 $em->persist($item);
                 $em->flush();
                 $em->refresh($item);
@@ -88,7 +89,23 @@ class OrderController extends Controller{
     public function removeAction(Request $request, $id){
         $em = $this->getDoctrine()->getManager();
         $item = $em->getRepository('PaperMainBundle:'.self::ENTITY_NAME)->findOneById($id);
+
         if ($item){
+
+            foreach ( $item->getPapers() as $frozen){
+                $paper = $frozen->getPaper();
+
+                if ($frozen->getStatus() == 1){
+                    $paper->setFrozen($paper->getFrozen() - $frozen->getCount());
+                }
+                if ($item->getStatus() == 2){
+                    $paper->setCount($paper->getCount() + $frozen->getCount());
+                }
+                $em->flush($paper);
+                $em->remove($frozen);
+                $em->flush();
+            }
+
             $em->remove($item);
             $em->flush();
         }
@@ -100,12 +117,17 @@ class OrderController extends Controller{
      * @Route("/status/{id}/{status}", name="paper_status")
      */
     public function statusAction(Request $request, $id, $status){
+        $error = 0;
         $em = $this->getDoctrine()->getManager();
         $item = $em->getRepository('PaperMainBundle:'.self::ENTITY_NAME)->findOneById($id);
-        if ($item){
-            $item->setStatus($status);
-            $em->flush();
+        if ($status == 2 && !$item->isAllHold()){
+            $error = 1;
+        }else{
+            if ($item){
+                $item->setStatus($status);
+                $em->flush();
+            }
         }
-        return $this->redirect($request->headers->get('referer'));
+        return $this->redirect($this->generateUrl('order_list', array('error' => $error)));
     }
 }

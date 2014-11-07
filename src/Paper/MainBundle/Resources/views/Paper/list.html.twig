@@ -2,7 +2,9 @@
 
 {% block breadcrumb %}
     <a href="{{ path('paper_add') }}"><span class="btn btn-primary">Создать</span></a>
-    <span class="btn btn-warning" data-toggle="modal" data-target="#myModal">Добавить на склад</span>
+    {% if is_granted('ROLE_PRESSMAN') %}
+        <span class="btn btn-warning" data-toggle="modal" data-target="#myModal">Добавить на склад</span>
+    {% endif %}
     <br style="clear: both"/>
     <br style="clear: both"/>
 {% endblock %}
@@ -15,6 +17,8 @@
                 <th>Название</th>
                 <th></th>
                 <th>Количество</th>
+                <th>Заморожено</th>
+                <th>Свободно</th>
                 <th>Статус</th>
                 <th class="setting">Инструменты</th>
             </tr>
@@ -23,24 +27,28 @@
                     <td>{{ item.id }}</td>
                     <td>{{ item.title }}</td>
                     <td></td>
-                    <td>{{ item.count }}</td>
+                    <td>{{ item.count}}</td>
+                    <td>{{ item.frozen }}</td>
+                    <td>{{ item.count - item.frozen}}</td>
                     <td>{{ item.enabledStr }}</td>
                     <td class="setting">
-                        {% spaceless %}
-                        {#<a href="{{ path('paper_addcount',{'id' : item.id}) }}"></a>#}
-                        <a href="{{ path('paper_edit',{'id' : item.id}) }}">
-                            <button type="button" class="btn btn-default btn-bg">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                            </button>
-                        </a>
-                            &nbsp;
-                            &nbsp;
-                        <a href="{{ path('paper_remove',{'id' : item.id}) }}">
-                            <button type="button" class="btn btn-default btn-bg">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </button>
-                        </a>
-                        {% endspaceless %}
+                        {% if is_granted('ROLE_ADMIN') %}
+                            {% spaceless %}
+                            {#<a href="{{ path('paper_addcount',{'id' : item.id}) }}"></a>#}
+                            <a href="{{ path('paper_edit',{'id' : item.id}) }}">
+                                <button type="button" class="btn btn-default btn-bg">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
+                            </a>
+                                &nbsp;
+                                &nbsp;
+                            <a href="{{ path('paper_remove',{'id' : item.id}) }}">
+                                <button type="button" class="btn btn-default btn-bg">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </button>
+                            </a>
+                            {% endspaceless %}
+                        {% endif %}
                     </td>
                 </tr>
             {% endfor%}
