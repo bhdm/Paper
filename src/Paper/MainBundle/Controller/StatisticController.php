@@ -64,6 +64,8 @@ class StatisticController extends Controller{
                 if ($item->getTypePrint() == 3){ $f[$item->getPrinter()->getTitle()]['0'] += $item->getCount()*2; }
                 if ($item->getTypePrint() == 2) { $f[$item->getPrinter()->getTitle()]['1'] += $item->getCount(); }
                 if ($item->getTypePrint() == 1) { $f[$item->getPrinter()->getTitle()]['1'] += $item->getCount()*2; }
+                if ($item->getTypePrint() == 5) { $f[$item->getPrinter()->getTitle()]['0'] += $item->getCount(); $f[$item->getPrinter()->getTitle()]['1'] += $item->getCount(); }
+
             }
         }
 

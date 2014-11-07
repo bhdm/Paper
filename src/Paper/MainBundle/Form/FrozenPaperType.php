@@ -25,6 +25,8 @@ class FrozenPaperType extends AbstractType
                     '2' => '4+0',
                     '3' => '1+1',
                     '4' => '1+0',
+                    '5' => '4+1',
+                    '6' => '0+0',
                 ),
                 'label' => 'Тип печати',
                 'required'  => false,
