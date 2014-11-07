@@ -24,7 +24,7 @@ class FrozenStatisticController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $orders = $this->getDoctrine()->getRepository('PaperMainBundle:Order')->findAll();
+        $orders = $this->getDoctrine()->getRepository('PaperMainBundle:Order')->findOrderwithFrozen();
 
         return array('orders' => $orders);
     }

@@ -25,4 +25,16 @@ class OrderRepository extends EntityRepository
         return $result;
     }
 
+    public function findOrderwithFrozen(){
+        $result= $this
+            ->createQueryBuilder('o')
+            ->select('o')
+            ->leftJoin('o.papers','f')
+            ->where('f.status = 1')
+            ->getQuery()
+            ->getResult();
+
+        return $result;
+    }
+
 }
