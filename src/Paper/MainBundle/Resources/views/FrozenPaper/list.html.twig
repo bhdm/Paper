@@ -23,6 +23,7 @@
                 <th>Бумага</th>
                 <th>Кол-во</th>
                 <th>Тип печати</th>
+                <th>Принтер</th>
                 <th>Статус</th>
                 <th class="setting">Инструменты</th>
             </tr>
@@ -31,7 +32,7 @@
                     <td>{{ item.paper.title }}</td>
                     <td>{{ item.count }}</td>
 
-                    <td>
+                    <td style="text-align: center">
                         {% if item.typePrint == 1 %}
                             4+4
                         {% elseif item.typePrint == 2 %}
@@ -40,8 +41,13 @@
                             1+1
                         {% elseif item.typePrint == 4 %}
                             1+0
+                        {% elseif item.typePrint == 5 %}
+                            4+1
+                        {% elseif item.typePrint == 6 %}
+                            0+0
                         {% endif %}
                     </td>
+                    <td>{{ item.printer.title }}</td>
                     <td>
                         <div class="btn-group btn-group-sm">
                             <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">

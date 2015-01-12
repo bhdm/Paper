@@ -58,21 +58,21 @@ function query($link, $data, $auth = false){
     );
     $contacts['request']['contacts']['add']=array(
         array(
-            'name'=>'Roman Feygenberg 2 ', #Имя контакта
+            'name'=> $_POST['lead_name'], #Имя контакта
             //'last_modified'=>1298904164, //optional
             'linked_leads_id'=>array( #Список с айдишниками сделок контакта
 //                3698752,
 //                3698754
             ),
-            'company_name'=>'amoCRM', #Наименование компании
-            'tags' => $site, #Теги
+            'company_name'=>'', #Наименование компании
+            'tags' => '', #Теги
             'custom_fields'=>array(
                 array(
                     #Телефоны
                     'id'=>1057420, #Уникальный индентификатор заполняемого дополнительного поля
                     'values'=>array(
                         array(
-                            'value'=>'415.874.3275',
+                            'value'=> $_POST['lead_phone'],
                             'enum'=>'MOB' #Мобильный
                         ),
                     )
@@ -82,7 +82,7 @@ function query($link, $data, $auth = false){
                     'id'=>1057422,
                     'values'=>array(
                         array(
-                            'value'=>'test@mail.com',
+                            'value'=> $_POST['lead_email'],
                             'enum'=>'WORK', #Рабочий
                         ),
                     )

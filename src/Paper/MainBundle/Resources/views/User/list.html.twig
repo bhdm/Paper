@@ -10,7 +10,7 @@
     <div class="well">
         <table class="table">
             <tr>
-                <th>№</th>
+                {#<th>№</th>#}
                 <th>Логин</th>
                 <th></th>
                 <th>Права</th>
@@ -18,7 +18,7 @@
             </tr>
             {% for item in pagination %}
                 <tr>
-                    <td>{{ item.id }}</td>
+                    {#<td>{{ item.id }}</td>#}
                     <td>{{ item }}</td>
                     <td></td>
                     <td>{{ item.roles[0] }}</td>
