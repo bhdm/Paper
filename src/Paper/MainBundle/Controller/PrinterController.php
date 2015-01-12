@@ -29,7 +29,7 @@ class PrinterController extends Controller{
         $pagination = $paginator->paginate(
             $items,
             $this->get('request')->query->get('printer', 1),
-            20
+            500
         );
 
         return array('pagination' => $pagination);

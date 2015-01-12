@@ -30,7 +30,7 @@ class OrderController extends Controller{
         $pagination = $paginator->paginate(
             $items,
             $this->get('request')->query->get('order', 1),
-            20
+            500
         );
 
         return array('pagination' => $pagination, 'error' => $error);

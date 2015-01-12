@@ -30,7 +30,7 @@ class UserController extends Controller{
         $pagination = $paginator->paginate(
             $items,
             $this->get('request')->query->get('user', 1),
-            20
+            500
         );
 
         return array('pagination' => $pagination);

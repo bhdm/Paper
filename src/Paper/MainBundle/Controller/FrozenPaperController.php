@@ -30,7 +30,7 @@ class FrozenPaperController extends Controller{
         $pagination = $paginator->paginate(
             $items,
             $this->get('request')->query->get('frozenPaper', 1),
-            20
+            500
         );
 
         return array('pagination' => $pagination, 'orderId' => $orderId, 'error' => $error, 'order' => $order);
