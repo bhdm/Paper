@@ -43,6 +43,7 @@ class Order extends BaseEntity
 
     public function __construct(){
         $this->papers = new ArrayCollection();
+        $this->created = new \DateTime();
     }
 
     /**

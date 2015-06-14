@@ -28,6 +28,7 @@ class Printer extends BaseEntity
 
     public function __construct(){
         $this->papers = new ArrayCollection();
+        $this->created = new \DateTime();
     }
 
     public function __toString(){

@@ -15,7 +15,7 @@
 
         <table class="table">
             <tr>
-                <th>Дата</th>
+                <th>Дата сдачи</th>
                 <th>Заказ</th>
                 <th></th>
                 <th>Статус</th>
@@ -23,7 +23,7 @@
             </tr>
             {% for item in pagination %}
                 <tr>
-                    <td>{{ item.created | date("d.m.Y H:i") }}</td>
+                    <td>{{ item.end | date("d.m.Y H:i") }}</td>
                     <td>{{ item.title }}</td>
                     <td></td>
                     <td>

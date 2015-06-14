@@ -44,6 +44,7 @@ class User extends BaseEntity implements UserInterface
     public function __construct(){
         $this->roles    = 'ROLE_USER';
         $this->orders = new ArrayCollection();
+        $this->created = new \DateTime();
     }
 
     static public function getRolesNames(){

@@ -21,7 +21,7 @@ abstract class BaseEntity
     protected $created;
 
     /**
-     * @ORM\Column(type = "datetime")
+     * @ORM\Column(type = "datetime", nullable = true)
      * @Gedmo\Timestampable(on = "update")
      */
     protected $updated;
@@ -118,5 +118,9 @@ abstract class BaseEntity
         }else{
             return 'Неактивна';
         }
+    }
+
+    public function __construct(){
+        $this->created = new \DateTime();
     }
 }

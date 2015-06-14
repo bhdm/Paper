@@ -7,7 +7,7 @@ class OrderRepository extends EntityRepository
 {
     public function findAll()
     {
-        return $this->findBy(array(), array('created' => 'DESC'));
+        return $this->findBy(array(), array('end' => 'ASC'));
     }
 
 

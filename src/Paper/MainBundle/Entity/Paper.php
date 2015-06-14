@@ -42,6 +42,7 @@ class Paper extends BaseEntity
 
     public function __construct(){
         $this->orders = new ArrayCollection();
+        $this->created = new \DateTime();
     }
     /**
      * @param mixed $count

@@ -50,6 +50,9 @@ class FrozenPaper extends BaseEntity
      */
     protected $printer;
 
+    public function __construct(){
+        $this->created = new \DateTime();
+    }
 
     /**
      * @param mixed $count
