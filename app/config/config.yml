@@ -28,6 +28,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    form:
+        resources: ['PaperMainBundle::form_style.html.twig']
 
 # Assetic Configuration
 assetic:
@@ -76,11 +78,11 @@ doctrine:
                 alias: GedmoTranslatable # this one is optional and will default to the name set for the mapping
                 is_bundle: false
 
-stof_doctrine_extensions:
-    orm:
-        default:
-            sluggable: true
-            timestampable: true
+#stof_doctrine_extensions:
+#    orm:
+#        default:
+#            sluggable: true
+#            timestampable: true
 
 # Swiftmailer Configuration
 swiftmailer:

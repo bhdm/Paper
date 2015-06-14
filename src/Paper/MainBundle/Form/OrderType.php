@@ -16,6 +16,7 @@ class OrderType extends AbstractType
     {
         $builder
             ->add('title', null, array('label' => 'Название заказа'))
+            ->add('end',null, array('label' => 'Дата сдачи', 'required'  => true))
 //            ->add('enabled','choice',  array(
 //                'empty_value' => false,
 //                'choices' => array(

@@ -21,6 +21,12 @@ class Order extends BaseEntity
     protected $title;
 
     /**
+     * @ORM\Column(type="datetime", length=255)
+     * @Assert\NotBlank( message = "Введите дату сдачи заказа" )
+     */
+    protected $end;
+
+    /**
      * @ORM\ManyToOne(targetEntity="User", inversedBy="orders")
      */
     protected $user;
@@ -112,6 +118,22 @@ class Order extends BaseEntity
             }
         }
         return true;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEnd()
+    {
+        return $this->end;
+    }
+
+    /**
+     * @param mixed $end
+     */
+    public function setEnd($end)
+    {
+        $this->end = $end;
     }
 
 
