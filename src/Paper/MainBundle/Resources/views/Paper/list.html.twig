@@ -23,7 +23,14 @@
                 <th class="setting">Инструменты</th>
             </tr>
             {% for item in pagination %}
-                <tr>
+                {% if item.count < 500 %}
+                    {% set color = 'background: #FFBABA;' %}
+                {% elseif item.count < 1000 %}
+                    {% set color = 'background: #FFFFB4;' %}
+                {% else %}
+                    {% set color = '' %}
+                {% endif %}
+                <tr style="{{ color }}">
                     {#<td>{{ item.id }}</td>#}
                     <td>{{ item.title }}</td>
                     <td></td>

@@ -35,6 +35,11 @@ class Paper extends BaseEntity
      */
     protected $frozen = 0;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="PaperType", inversedBy="papers")
+     */
+    protected $type;
+
     public function __construct(){
         $this->orders = new ArrayCollection();
     }
@@ -105,6 +110,22 @@ class Paper extends BaseEntity
     public function getFrozen()
     {
         return $this->frozen;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param mixed $type
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
     }
 
 
