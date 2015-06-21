@@ -1,0 +1,99 @@
+{% extends "PaperMainBundle::mini_layout.html.twig" %}
+
+
+{% block content %}
+    <div class="container">
+        {% if order.user == app.user or is_granted('ROLE_PRESSMAN') %}
+            <ul class="breadcrumb">
+                <div style="float: right">
+                    <a href="{{ path('marriagePaper_add',{'orderId' : orderId}) }}">Добавить брак в заказ</a> <span class="divider"></span>
+                </div>
+            </ul>
+        {% endif %}
+
+        {% if error == 1 %}
+            <div class="alert alert-warning" role="alert">Недостаточно бумаги</div>
+        {% endif %}
+        {% if error == 2 %}
+            <div class="alert alert-danger" role="alert">Недостаточно бумаги</div>
+        {% endif %}
+
+        <table class="table">
+            <tr>
+                <th>Бумага</th>
+                <th>Кол-во</th>
+                <th>Тип печати</th>
+                <th>Принтер</th>
+                <th>Статус</th>
+                <th class="setting">Инструменты</th>
+            </tr>
+            {% for item in pagination %}
+                <tr>
+                    <td>{{ item.paper.title }}</td>
+                    <td>{{ item.count }}</td>
+
+                    <td style="text-align: center">
+                        {% if item.typePrint == 1 %}
+                            4+4
+                        {% elseif item.typePrint == 2 %}
+                            4+0
+                        {% elseif item.typePrint == 3 %}
+                            1+1
+                        {% elseif item.typePrint == 4 %}
+                            1+0
+                        {% elseif item.typePrint == 5 %}
+                            4+1
+                        {% elseif item.typePrint == 6 %}
+                            0+0
+                        {% endif %}
+                    </td>
+                    <td>{{ item.printer.title }}</td>
+                    <td>
+                        <div class="btn-group btn-group-sm">
+                            <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
+                                {% if item.status == 0 %}
+                                    <span class="text-success">Неактивен</span>
+                                {% elseif item.status == 1 %}
+                                    <span class="text-danger">Резерв</span>
+                                {% elseif item.status == 2 %}
+                                    <span class="text-danger">Потрачено</span>
+                                {% endif %}
+                                <span class="caret"></span>
+                            </button>
+                            {% if order.user == app.user or is_granted('ROLE_PRESSMAN') %}
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ path('marriagePaper_status',{'id' : item.id, 'status' : 0}) }}">Неактивен</a></li>
+                                    <li><a href="{{ path('marriagePaper_status',{'id' : item.id, 'status' : 1}) }}">Резерв</a></li>
+                                    {% if is_granted('ROLE_PRESSMAN') %}
+                                        <li><a href="{{ path('marriagePaper_status',{'id' : item.id, 'status' : 2}) }}">Потрачено</a></li>
+                                    {% endif %}
+                                </ul>
+                            {% endif %}
+                        </div>
+                    </td>
+                    <td class="setting">
+                        {% if order.user == app.user or is_granted('ROLE_PRESSMAN') %}
+                            {% spaceless %}
+                                <a href="{{ path('marriagePaper_edit',{'orderId' : orderId, 'id' : item.id }) }}">
+                                    <button type="button" class="btn btn-default btn-bg">
+                                        <span class="glyphicon glyphicon-pencil"></span>
+                                    </button>
+                                </a>
+                                &nbsp;
+                                &nbsp;
+                                <a href="{{ path('marriagePaper_remove',{'id' : item.id}) }}">
+                                    <button type="button" class="btn btn-default btn-bg">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </button>
+                                </a>
+                            {% endspaceless %}
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor%}
+        </table>
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    </div>
+{% endblock %}

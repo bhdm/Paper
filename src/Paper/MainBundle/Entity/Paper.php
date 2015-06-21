@@ -24,7 +24,6 @@ class Paper extends BaseEntity
      */
     protected $count = 0;
 
-
     /**
      * @ORM\OneToMany(targetEntity="FrozenPaper", mappedBy="paper")
      */
@@ -40,9 +39,15 @@ class Paper extends BaseEntity
      */
     protected $type;
 
+    /**
+     * @ORM\OneToMany(targetEntity="MarriagePaper", mappedBy="paper")
+     */
+    protected $marriages;
+
     public function __construct(){
         $this->orders = new ArrayCollection();
         $this->created = new \DateTime();
+        $this->marriages = new ArrayCollection();
     }
     /**
      * @param mixed $count
@@ -127,6 +132,22 @@ class Paper extends BaseEntity
     public function setType($type)
     {
         $this->type = $type;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMarriages()
+    {
+        return $this->marriages;
+    }
+
+    /**
+     * @param mixed $marriages
+     */
+    public function setMarriages($marriages)
+    {
+        $this->marriages = $marriages;
     }
 
 

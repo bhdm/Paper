@@ -37,6 +37,12 @@ class Order extends BaseEntity
     protected $papers;
 
     /**
+     * @ORM\OneToMany(targetEntity="MarriagePaper", mappedBy="order")
+     */
+    protected $marriages;
+
+
+    /**
      * @ORM\Column(type="integer")
      */
     protected $status = 0;
@@ -44,6 +50,7 @@ class Order extends BaseEntity
     public function __construct(){
         $this->papers = new ArrayCollection();
         $this->created = new \DateTime();
+        $this->marriages = new ArrayCollection();
     }
 
     /**
@@ -135,6 +142,22 @@ class Order extends BaseEntity
     public function setEnd($end)
     {
         $this->end = $end;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMarriages()
+    {
+        return $this->marriages;
+    }
+
+    /**
+     * @param mixed $marriages
+     */
+    public function setMarriages($marriages)
+    {
+        $this->marriages = $marriages;
     }
 
 
