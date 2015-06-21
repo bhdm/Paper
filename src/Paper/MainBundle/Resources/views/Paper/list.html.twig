@@ -17,7 +17,8 @@
                 <th>Название</th>
                 <th></th>
                 <th>Количество</th>
-                <th>Заморожено</th>
+                <th>Резерв</th>
+                <th>Закупить</th>
                 <th>Свободно</th>
                 <th>Статус</th>
                 <th class="setting">Инструменты</th>
@@ -34,8 +35,15 @@
                     {#<td>{{ item.id }}</td>#}
                     <td>{{ item.title }}</td>
                     <td></td>
-                    <td>{{ item.count}}</td>
+                    <td>{{ item.count }}</td>
                     <td>{{ item.frozen }}</td>
+                    <td>
+                        {% if (item.count - item.frozen ) < 0 %}
+                            {{ item.count - item.frozen }}
+                        {% else %}
+                            {{ '0' }}
+                        {% endif %}
+                    </td>
                     <td>{{ item.count - item.frozen}}</td>
                     <td>{{ item.enabledStr }}</td>
                     <td class="setting">

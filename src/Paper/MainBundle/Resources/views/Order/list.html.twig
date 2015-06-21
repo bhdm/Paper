@@ -22,7 +22,14 @@
                 <th class="setting">Инструменты</th>
             </tr>
             {% for item in pagination %}
-                <tr>
+                {% if (item.status == 2) %}
+                    {% set color = '#BAFFBD' %}
+                {% elseif item.end >= "-1 day" | date %}
+                    {% set color = '#FFBABA' %}
+                {% else %}
+                    {% set color = '#FFFFFF' %}
+                {% endif %}
+                <tr style="background: {{ color }}">
                     <td>{{ item.end | date("d.m.Y H:i") }}</td>
                     <td>{{ item.title }}</td>
                     <td></td>
