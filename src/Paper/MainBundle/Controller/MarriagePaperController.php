@@ -54,7 +54,7 @@ class MarriagePaperController extends Controller{
                 $em->persist($item);
                 $paper = $item->getPaper();
                 $error = 0;
-                if ($paper->getCount() < $paper->getMarriage() ){
+                if ($paper->getCount() < $item->getCount() ){
                     $error = 1;
                 }
                 $em->flush();

@@ -30,6 +30,11 @@ class MarriagePaper extends BaseEntity
     protected $count;
 
     /**
+     * @ORM\Column(type="integer")
+     */
+    protected $typePrint;
+
+    /**
      * @return mixed
      */
     public function getOrder()
@@ -76,5 +81,23 @@ class MarriagePaper extends BaseEntity
     {
         $this->count = $count;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getTypePrint()
+    {
+        return $this->typePrint;
+    }
+
+    /**
+     * @param mixed $typePrint
+     */
+    public function setTypePrint($typePrint)
+    {
+        $this->typePrint = $typePrint;
+    }
+
+
 
 }

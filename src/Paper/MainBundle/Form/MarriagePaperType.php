@@ -17,6 +17,20 @@ class MarriagePaperType extends AbstractType
         $builder
             ->add('paper', null, array('label' => 'Бумага'))
             ->add('count', null, array('label' => 'Количество'))
+            ->add('typePrint','choice',  array(
+                'empty_value' => false,
+                'choices' => array(
+                    '1' => '4+4',
+                    '2' => '4+0',
+                    '3' => '1+1',
+                    '4' => '1+0',
+                    '5' => '4+1',
+                    '6' => '0+0',
+                ),
+                'label' => 'Тип печати',
+                'required'  => false,
+            ))
+            ->add('submit', 'submit', array('label' => 'Сохранить'))
         ;
     }
     
